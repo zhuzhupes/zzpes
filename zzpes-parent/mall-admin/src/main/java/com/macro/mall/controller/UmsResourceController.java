@@ -2,7 +2,7 @@ package com.macro.mall.controller;
 
 import com.macro.mall.common.api.CommonPage;
 import com.macro.mall.common.api.CommonResult;
-import com.macro.mall.model.UmsResource;
+import com.xiaozhu.zzpes.entity.UmsResource;
 import com.macro.mall.security.component.DynamicSecurityMetadataSource;
 import com.macro.mall.service.UmsResourceService;
 import io.swagger.annotations.Api;

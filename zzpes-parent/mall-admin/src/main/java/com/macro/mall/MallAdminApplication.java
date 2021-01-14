@@ -11,8 +11,8 @@ import org.springframework.context.annotation.ComponentScan;
  * Created by macro on 2018/4/26.
  */
 @SpringBootApplication
-@ComponentScan({ "com.charlie.ctmpas" ,"com.macro.mall"})
-@MapperScan(basePackages = {"com.charlie.ctmpas.mapper", "com.macro.mall.mapper"})
+@ComponentScan({ "com.xiaozhu.zzpes" ,"com.macro.mall"})
+@MapperScan(basePackages = {"com.xiaozhu.zzpes.mapper", "com.xiaozhu.zzpes.mapper"})
 public class MallAdminApplication {
     public static void main(String[] args) {
         SpringApplication application = new SpringApplication(MallAdminApplication.class);

@@ -1,6 +1,6 @@
 package com.macro.mall.portal.service;
 
-import com.macro.mall.model.UmsMember;
+import com.xiaozhu.zzpes.entity.UmsMember;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.transaction.annotation.Transactional;
 

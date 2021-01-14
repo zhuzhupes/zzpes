@@ -1,6 +1,6 @@
 package com.macro.mall.service;
 
-import com.macro.mall.model.SmsCouponHistory;
+import com.xiaozhu.zzpes.entity.SmsCouponHistory;
 
 import java.util.List;
 

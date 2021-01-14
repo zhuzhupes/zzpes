@@ -1,9 +1,9 @@
 package com.macro.mall.service.impl;
 
 import com.macro.mall.dto.UmsPermissionNode;
-import com.macro.mall.mapper.UmsPermissionMapper;
-import com.macro.mall.model.UmsPermission;
-import com.macro.mall.model.UmsPermissionExample;
+import com.xiaozhu.zzpes.mapper.UmsPermissionMapper;
+import com.xiaozhu.zzpes.entity.UmsPermission;
+import com.xiaozhu.zzpes.entity.UmsPermissionExample;
 import com.macro.mall.service.UmsPermissionService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;

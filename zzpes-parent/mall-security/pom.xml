@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.charlie.ctmpas</groupId>
+    <groupId>com.xiaozhu.zzpes</groupId>
     <artifactId>mall-security</artifactId>
     <version>1.0-SNAPSHOT</version>
     <build>
@@ -23,14 +23,14 @@
     <description>mall-security project for mall</description>
 
     <parent>
-        <groupId>com.charlie.ctmpas</groupId>
-        <artifactId>ctmpas</artifactId>
+        <groupId>com.xiaozhu.zzpes</groupId>
+        <artifactId>zzpes-parent</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
     <dependencies>
         <dependency>
-            <groupId>com.charlie.ctmpas</groupId>
+            <groupId>com.xiaozhu.zzpes</groupId>
             <artifactId>mall-common</artifactId>
         </dependency>
         <dependency>

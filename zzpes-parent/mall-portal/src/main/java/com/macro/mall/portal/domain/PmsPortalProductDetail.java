@@ -1,6 +1,6 @@
 package com.macro.mall.portal.domain;
 
-import com.macro.mall.model.*;
+import com.xiaozhu.zzpes.entity.*;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;

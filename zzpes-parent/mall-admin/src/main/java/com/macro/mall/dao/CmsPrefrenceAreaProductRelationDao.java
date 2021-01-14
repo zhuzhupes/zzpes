@@ -1,6 +1,6 @@
 package com.macro.mall.dao;
 
-import com.macro.mall.model.CmsPrefrenceAreaProductRelation;
+import com.xiaozhu.zzpes.entity.CmsPrefrenceAreaProductRelation;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

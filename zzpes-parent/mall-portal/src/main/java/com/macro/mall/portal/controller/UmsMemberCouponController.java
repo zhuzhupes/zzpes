@@ -1,8 +1,8 @@
 package com.macro.mall.portal.controller;
 
 import com.macro.mall.common.api.CommonResult;
-import com.macro.mall.model.SmsCoupon;
-import com.macro.mall.model.SmsCouponHistory;
+import com.xiaozhu.zzpes.entity.SmsCoupon;
+import com.xiaozhu.zzpes.entity.SmsCouponHistory;
 import com.macro.mall.portal.domain.CartPromotionItem;
 import com.macro.mall.portal.domain.SmsCouponHistoryDetail;
 import com.macro.mall.portal.service.OmsCartItemService;

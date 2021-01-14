@@ -2,7 +2,7 @@ package com.macro.mall.controller;
 
 import com.macro.mall.common.api.CommonPage;
 import com.macro.mall.common.api.CommonResult;
-import com.macro.mall.model.SmsHomeRecommendSubject;
+import com.xiaozhu.zzpes.entity.SmsHomeRecommendSubject;
 import com.macro.mall.service.SmsHomeRecommendSubjectService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

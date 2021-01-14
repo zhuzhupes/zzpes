@@ -1,9 +1,9 @@
 package com.macro.mall.portal.domain;
 
-import com.macro.mall.model.PmsProduct;
-import com.macro.mall.model.PmsProductFullReduction;
-import com.macro.mall.model.PmsProductLadder;
-import com.macro.mall.model.PmsSkuStock;
+import com.xiaozhu.zzpes.entity.PmsProduct;
+import com.xiaozhu.zzpes.entity.PmsProductFullReduction;
+import com.xiaozhu.zzpes.entity.PmsProductLadder;
+import com.xiaozhu.zzpes.entity.PmsSkuStock;
 
 import java.util.List;
 

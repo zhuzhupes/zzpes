@@ -1,7 +1,7 @@
 package com.macro.mall.service;
 
-import com.macro.mall.model.UmsAdmin;
-import com.macro.mall.model.UmsResource;
+import com.xiaozhu.zzpes.entity.UmsAdmin;
+import com.xiaozhu.zzpes.entity.UmsResource;
 
 import java.util.List;
 

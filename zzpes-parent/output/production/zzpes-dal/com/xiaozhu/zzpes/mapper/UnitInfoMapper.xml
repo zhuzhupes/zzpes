@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaozhu.zzpes.mapper.UnitInfoMapper">
+  <resultMap id="BaseResultMap" type="com.xiaozhu.zzpes.entity.UnitInfo">
+    <id column="unit_seq" jdbcType="BIGINT" property="unitSeq" />
+    <result column="unit_name" jdbcType="VARCHAR" property="unitName" />
+    <result column="unit_short_name" jdbcType="VARCHAR" property="unitShortName" />
+    <result column="create_date" jdbcType="DATE" property="createDate" />
+    <result column="create_user_id" jdbcType="BIGINT" property="createUserId" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    unit_seq, unit_name, unit_short_name, create_date, create_user_id
+  </sql>
+  <select id="selectByExample" parameterType="com.xiaozhu.zzpes.entity.UnitInfoExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from unit_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from unit_info
+    where unit_seq = #{unitSeq,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from unit_info
+    where unit_seq = #{unitSeq,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xiaozhu.zzpes.entity.UnitInfoExample">
+    delete from unit_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xiaozhu.zzpes.entity.UnitInfo">
+    insert into unit_info (unit_seq, unit_name, unit_short_name, 
+      create_date, create_user_id)
+    values (#{unitSeq,jdbcType=BIGINT}, #{unitName,jdbcType=VARCHAR}, #{unitShortName,jdbcType=VARCHAR}, 
+      #{createDate,jdbcType=DATE}, #{createUserId,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaozhu.zzpes.entity.UnitInfo">
+    insert into unit_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="unitSeq != null">
+        unit_seq,
+      </if>
+      <if test="unitName != null">
+        unit_name,
+      </if>
+      <if test="unitShortName != null">
+        unit_short_name,
+      </if>
+      <if test="createDate != null">
+        create_date,
+      </if>
+      <if test="createUserId != null">
+        create_user_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="unitSeq != null">
+        #{unitSeq,jdbcType=BIGINT},
+      </if>
+      <if test="unitName != null">
+        #{unitName,jdbcType=VARCHAR},
+      </if>
+      <if test="unitShortName != null">
+        #{unitShortName,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=DATE},
+      </if>
+      <if test="createUserId != null">
+        #{createUserId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xiaozhu.zzpes.entity.UnitInfoExample" resultType="java.lang.Long">
+    select count(*) from unit_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update unit_info
+    <set>
+      <if test="record.unitSeq != null">
+        unit_seq = #{record.unitSeq,jdbcType=BIGINT},
+      </if>
+      <if test="record.unitName != null">
+        unit_name = #{record.unitName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.unitShortName != null">
+        unit_short_name = #{record.unitShortName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createDate != null">
+        create_date = #{record.createDate,jdbcType=DATE},
+      </if>
+      <if test="record.createUserId != null">
+        create_user_id = #{record.createUserId,jdbcType=BIGINT},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update unit_info
+    set unit_seq = #{record.unitSeq,jdbcType=BIGINT},
+      unit_name = #{record.unitName,jdbcType=VARCHAR},
+      unit_short_name = #{record.unitShortName,jdbcType=VARCHAR},
+      create_date = #{record.createDate,jdbcType=DATE},
+      create_user_id = #{record.createUserId,jdbcType=BIGINT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaozhu.zzpes.entity.UnitInfo">
+    update unit_info
+    <set>
+      <if test="unitName != null">
+        unit_name = #{unitName,jdbcType=VARCHAR},
+      </if>
+      <if test="unitShortName != null">
+        unit_short_name = #{unitShortName,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        create_date = #{createDate,jdbcType=DATE},
+      </if>
+      <if test="createUserId != null">
+        create_user_id = #{createUserId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where unit_seq = #{unitSeq,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaozhu.zzpes.entity.UnitInfo">
+    update unit_info
+    set unit_name = #{unitName,jdbcType=VARCHAR},
+      unit_short_name = #{unitShortName,jdbcType=VARCHAR},
+      create_date = #{createDate,jdbcType=DATE},
+      create_user_id = #{createUserId,jdbcType=BIGINT}
+    where unit_seq = #{unitSeq,jdbcType=BIGINT}
+  </update>
+</mapper>

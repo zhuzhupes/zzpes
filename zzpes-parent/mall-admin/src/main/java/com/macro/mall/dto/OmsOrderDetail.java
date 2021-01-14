@@ -1,8 +1,8 @@
 package com.macro.mall.dto;
 
-import com.macro.mall.model.OmsOrder;
-import com.macro.mall.model.OmsOrderItem;
-import com.macro.mall.model.OmsOrderOperateHistory;
+import com.xiaozhu.zzpes.entity.OmsOrder;
+import com.xiaozhu.zzpes.entity.OmsOrderItem;
+import com.xiaozhu.zzpes.entity.OmsOrderOperateHistory;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;

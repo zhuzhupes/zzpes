@@ -1,9 +1,9 @@
 package com.macro.mall.service.impl;
 
 import com.github.pagehelper.PageHelper;
-import com.macro.mall.mapper.SmsCouponHistoryMapper;
-import com.macro.mall.model.SmsCouponHistory;
-import com.macro.mall.model.SmsCouponHistoryExample;
+import com.xiaozhu.zzpes.mapper.SmsCouponHistoryMapper;
+import com.xiaozhu.zzpes.entity.SmsCouponHistory;
+import com.xiaozhu.zzpes.entity.SmsCouponHistoryExample;
 import com.macro.mall.service.SmsCouponHistoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

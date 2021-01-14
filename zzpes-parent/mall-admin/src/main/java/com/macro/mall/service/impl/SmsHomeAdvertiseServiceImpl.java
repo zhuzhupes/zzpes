@@ -1,9 +1,9 @@
 package com.macro.mall.service.impl;
 
 import com.github.pagehelper.PageHelper;
-import com.macro.mall.mapper.SmsHomeAdvertiseMapper;
-import com.macro.mall.model.SmsHomeAdvertise;
-import com.macro.mall.model.SmsHomeAdvertiseExample;
+import com.xiaozhu.zzpes.mapper.SmsHomeAdvertiseMapper;
+import com.xiaozhu.zzpes.entity.SmsHomeAdvertise;
+import com.xiaozhu.zzpes.entity.SmsHomeAdvertiseExample;
 import com.macro.mall.service.SmsHomeAdvertiseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

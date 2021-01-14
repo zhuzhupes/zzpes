@@ -1,7 +1,7 @@
 package com.macro.mall.portal.service.impl;
 
-import com.macro.mall.mapper.UmsMemberMapper;
-import com.macro.mall.model.UmsMember;
+import com.xiaozhu.zzpes.mapper.UmsMemberMapper;
+import com.xiaozhu.zzpes.entity.UmsMember;
 import com.macro.mall.portal.service.UmsMemberCacheService;
 import com.macro.mall.security.annotation.CacheException;
 import com.macro.mall.security.config.RedisConfig;

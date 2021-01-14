@@ -1,6 +1,6 @@
 package com.macro.mall.portal.service;
 
-import com.macro.mall.model.UmsMember;
+import com.xiaozhu.zzpes.entity.UmsMember;
 
 /**
  * 会员信息缓存业务类

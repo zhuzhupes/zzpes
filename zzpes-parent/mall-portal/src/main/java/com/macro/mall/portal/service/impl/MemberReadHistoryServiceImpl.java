@@ -1,6 +1,6 @@
 package com.macro.mall.portal.service.impl;
 
-import com.macro.mall.model.UmsMember;
+import com.xiaozhu.zzpes.entity.UmsMember;
 import com.macro.mall.portal.domain.MemberReadHistory;
 import com.macro.mall.portal.repository.MemberReadHistoryRepository;
 import com.macro.mall.portal.service.MemberReadHistoryService;

@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaozhu.zzpes.mapper.Jx3PriceQryInfoMapper">
+  <resultMap id="BaseResultMap" type="com.xiaozhu.zzpes.entity.Jx3PriceQryInfo">
+    <id column="QRY_ID" jdbcType="INTEGER" property="qryId" />
+    <result column="BATCH_ID" jdbcType="VARCHAR" property="batchId" />
+    <result column="START_PRICE" jdbcType="INTEGER" property="startPrice" />
+    <result column="END_PRICE" jdbcType="INTEGER" property="endPrice" />
+    <result column="PAGE_NO" jdbcType="INTEGER" property="pageNo" />
+    <result column="STATE" jdbcType="INTEGER" property="state" />
+    <result column="RANGE_TOTAL_NUMS" jdbcType="INTEGER" property="rangeTotalNums" />
+    <result column="NOW_PAGE_DATA_NUM" jdbcType="INTEGER" property="nowPageDataNum" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    QRY_ID, BATCH_ID, START_PRICE, END_PRICE, PAGE_NO, STATE, RANGE_TOTAL_NUMS, NOW_PAGE_DATA_NUM, 
+    CREATE_TIME, UPDATE_TIME
+  </sql>
+  <select id="selectByExample" parameterType="com.xiaozhu.zzpes.entity.Jx3PriceQryInfoExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from jx3_price_qry_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from jx3_price_qry_info
+    where QRY_ID = #{qryId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from jx3_price_qry_info
+    where QRY_ID = #{qryId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xiaozhu.zzpes.entity.Jx3PriceQryInfoExample">
+    delete from jx3_price_qry_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xiaozhu.zzpes.entity.Jx3PriceQryInfo">
+    insert into jx3_price_qry_info (QRY_ID, BATCH_ID, START_PRICE, 
+      END_PRICE, PAGE_NO, STATE, 
+      RANGE_TOTAL_NUMS, NOW_PAGE_DATA_NUM, CREATE_TIME, 
+      UPDATE_TIME)
+    values (#{qryId,jdbcType=INTEGER}, #{batchId,jdbcType=VARCHAR}, #{startPrice,jdbcType=INTEGER}, 
+      #{endPrice,jdbcType=INTEGER}, #{pageNo,jdbcType=INTEGER}, #{state,jdbcType=INTEGER}, 
+      #{rangeTotalNums,jdbcType=INTEGER}, #{nowPageDataNum,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaozhu.zzpes.entity.Jx3PriceQryInfo">
+    insert into jx3_price_qry_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="qryId != null">
+        QRY_ID,
+      </if>
+      <if test="batchId != null">
+        BATCH_ID,
+      </if>
+      <if test="startPrice != null">
+        START_PRICE,
+      </if>
+      <if test="endPrice != null">
+        END_PRICE,
+      </if>
+      <if test="pageNo != null">
+        PAGE_NO,
+      </if>
+      <if test="state != null">
+        STATE,
+      </if>
+      <if test="rangeTotalNums != null">
+        RANGE_TOTAL_NUMS,
+      </if>
+      <if test="nowPageDataNum != null">
+        NOW_PAGE_DATA_NUM,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="qryId != null">
+        #{qryId,jdbcType=INTEGER},
+      </if>
+      <if test="batchId != null">
+        #{batchId,jdbcType=VARCHAR},
+      </if>
+      <if test="startPrice != null">
+        #{startPrice,jdbcType=INTEGER},
+      </if>
+      <if test="endPrice != null">
+        #{endPrice,jdbcType=INTEGER},
+      </if>
+      <if test="pageNo != null">
+        #{pageNo,jdbcType=INTEGER},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=INTEGER},
+      </if>
+      <if test="rangeTotalNums != null">
+        #{rangeTotalNums,jdbcType=INTEGER},
+      </if>
+      <if test="nowPageDataNum != null">
+        #{nowPageDataNum,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xiaozhu.zzpes.entity.Jx3PriceQryInfoExample" resultType="java.lang.Long">
+    select count(*) from jx3_price_qry_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update jx3_price_qry_info
+    <set>
+      <if test="record.qryId != null">
+        QRY_ID = #{record.qryId,jdbcType=INTEGER},
+      </if>
+      <if test="record.batchId != null">
+        BATCH_ID = #{record.batchId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.startPrice != null">
+        START_PRICE = #{record.startPrice,jdbcType=INTEGER},
+      </if>
+      <if test="record.endPrice != null">
+        END_PRICE = #{record.endPrice,jdbcType=INTEGER},
+      </if>
+      <if test="record.pageNo != null">
+        PAGE_NO = #{record.pageNo,jdbcType=INTEGER},
+      </if>
+      <if test="record.state != null">
+        STATE = #{record.state,jdbcType=INTEGER},
+      </if>
+      <if test="record.rangeTotalNums != null">
+        RANGE_TOTAL_NUMS = #{record.rangeTotalNums,jdbcType=INTEGER},
+      </if>
+      <if test="record.nowPageDataNum != null">
+        NOW_PAGE_DATA_NUM = #{record.nowPageDataNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.createTime != null">
+        CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updateTime != null">
+        UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update jx3_price_qry_info
+    set QRY_ID = #{record.qryId,jdbcType=INTEGER},
+      BATCH_ID = #{record.batchId,jdbcType=VARCHAR},
+      START_PRICE = #{record.startPrice,jdbcType=INTEGER},
+      END_PRICE = #{record.endPrice,jdbcType=INTEGER},
+      PAGE_NO = #{record.pageNo,jdbcType=INTEGER},
+      STATE = #{record.state,jdbcType=INTEGER},
+      RANGE_TOTAL_NUMS = #{record.rangeTotalNums,jdbcType=INTEGER},
+      NOW_PAGE_DATA_NUM = #{record.nowPageDataNum,jdbcType=INTEGER},
+      CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaozhu.zzpes.entity.Jx3PriceQryInfo">
+    update jx3_price_qry_info
+    <set>
+      <if test="batchId != null">
+        BATCH_ID = #{batchId,jdbcType=VARCHAR},
+      </if>
+      <if test="startPrice != null">
+        START_PRICE = #{startPrice,jdbcType=INTEGER},
+      </if>
+      <if test="endPrice != null">
+        END_PRICE = #{endPrice,jdbcType=INTEGER},
+      </if>
+      <if test="pageNo != null">
+        PAGE_NO = #{pageNo,jdbcType=INTEGER},
+      </if>
+      <if test="state != null">
+        STATE = #{state,jdbcType=INTEGER},
+      </if>
+      <if test="rangeTotalNums != null">
+        RANGE_TOTAL_NUMS = #{rangeTotalNums,jdbcType=INTEGER},
+      </if>
+      <if test="nowPageDataNum != null">
+        NOW_PAGE_DATA_NUM = #{nowPageDataNum,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where QRY_ID = #{qryId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaozhu.zzpes.entity.Jx3PriceQryInfo">
+    update jx3_price_qry_info
+    set BATCH_ID = #{batchId,jdbcType=VARCHAR},
+      START_PRICE = #{startPrice,jdbcType=INTEGER},
+      END_PRICE = #{endPrice,jdbcType=INTEGER},
+      PAGE_NO = #{pageNo,jdbcType=INTEGER},
+      STATE = #{state,jdbcType=INTEGER},
+      RANGE_TOTAL_NUMS = #{rangeTotalNums,jdbcType=INTEGER},
+      NOW_PAGE_DATA_NUM = #{nowPageDataNum,jdbcType=INTEGER},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP}
+    where QRY_ID = #{qryId,jdbcType=INTEGER}
+  </update>
+</mapper>

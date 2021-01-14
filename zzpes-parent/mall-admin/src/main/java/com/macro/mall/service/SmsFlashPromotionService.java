@@ -1,6 +1,6 @@
 package com.macro.mall.service;
 
-import com.macro.mall.model.SmsFlashPromotion;
+import com.xiaozhu.zzpes.entity.SmsFlashPromotion;
 
 import java.util.List;
 

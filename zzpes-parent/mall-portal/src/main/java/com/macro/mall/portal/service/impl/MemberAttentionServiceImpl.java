@@ -1,6 +1,6 @@
 package com.macro.mall.portal.service.impl;
 
-import com.macro.mall.model.UmsMember;
+import com.xiaozhu.zzpes.entity.UmsMember;
 import com.macro.mall.portal.domain.MemberBrandAttention;
 import com.macro.mall.portal.repository.MemberBrandAttentionRepository;
 import com.macro.mall.portal.service.MemberAttentionService;

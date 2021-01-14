@@ -1,7 +1,7 @@
 package com.macro.mall.service;
 
 import com.macro.mall.dto.PmsBrandParam;
-import com.macro.mall.model.PmsBrand;
+import com.xiaozhu.zzpes.entity.PmsBrand;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;

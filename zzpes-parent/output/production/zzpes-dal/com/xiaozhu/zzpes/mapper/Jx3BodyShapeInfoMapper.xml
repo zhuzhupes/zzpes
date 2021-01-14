@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaozhu.zzpes.mapper.Jx3BodyShapeInfoMapper">
+  <resultMap id="BaseResultMap" type="com.xiaozhu.zzpes.entity.Jx3BodyShapeInfo">
+    <id column="BODY_SHAPE_ID" jdbcType="INTEGER" property="bodyShapeId" />
+    <result column="BODY_SHAPE_NAME" jdbcType="VARCHAR" property="bodyShapeName" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    BODY_SHAPE_ID, BODY_SHAPE_NAME
+  </sql>
+  <select id="selectByExample" parameterType="com.xiaozhu.zzpes.entity.Jx3BodyShapeInfoExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from jx3_body_shape_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from jx3_body_shape_info
+    where BODY_SHAPE_ID = #{bodyShapeId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from jx3_body_shape_info
+    where BODY_SHAPE_ID = #{bodyShapeId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xiaozhu.zzpes.entity.Jx3BodyShapeInfoExample">
+    delete from jx3_body_shape_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xiaozhu.zzpes.entity.Jx3BodyShapeInfo">
+    insert into jx3_body_shape_info (BODY_SHAPE_ID, BODY_SHAPE_NAME)
+    values (#{bodyShapeId,jdbcType=INTEGER}, #{bodyShapeName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaozhu.zzpes.entity.Jx3BodyShapeInfo">
+    insert into jx3_body_shape_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="bodyShapeId != null">
+        BODY_SHAPE_ID,
+      </if>
+      <if test="bodyShapeName != null">
+        BODY_SHAPE_NAME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="bodyShapeId != null">
+        #{bodyShapeId,jdbcType=INTEGER},
+      </if>
+      <if test="bodyShapeName != null">
+        #{bodyShapeName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xiaozhu.zzpes.entity.Jx3BodyShapeInfoExample" resultType="java.lang.Long">
+    select count(*) from jx3_body_shape_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update jx3_body_shape_info
+    <set>
+      <if test="record.bodyShapeId != null">
+        BODY_SHAPE_ID = #{record.bodyShapeId,jdbcType=INTEGER},
+      </if>
+      <if test="record.bodyShapeName != null">
+        BODY_SHAPE_NAME = #{record.bodyShapeName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update jx3_body_shape_info
+    set BODY_SHAPE_ID = #{record.bodyShapeId,jdbcType=INTEGER},
+      BODY_SHAPE_NAME = #{record.bodyShapeName,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaozhu.zzpes.entity.Jx3BodyShapeInfo">
+    update jx3_body_shape_info
+    <set>
+      <if test="bodyShapeName != null">
+        BODY_SHAPE_NAME = #{bodyShapeName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where BODY_SHAPE_ID = #{bodyShapeId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaozhu.zzpes.entity.Jx3BodyShapeInfo">
+    update jx3_body_shape_info
+    set BODY_SHAPE_NAME = #{bodyShapeName,jdbcType=VARCHAR}
+    where BODY_SHAPE_ID = #{bodyShapeId,jdbcType=INTEGER}
+  </update>
+</mapper>

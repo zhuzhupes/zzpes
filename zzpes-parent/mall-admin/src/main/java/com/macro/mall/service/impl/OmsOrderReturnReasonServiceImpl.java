@@ -1,9 +1,9 @@
 package com.macro.mall.service.impl;
 
 import com.github.pagehelper.PageHelper;
-import com.macro.mall.mapper.OmsOrderReturnReasonMapper;
-import com.macro.mall.model.OmsOrderReturnReason;
-import com.macro.mall.model.OmsOrderReturnReasonExample;
+import com.xiaozhu.zzpes.mapper.OmsOrderReturnReasonMapper;
+import com.xiaozhu.zzpes.entity.OmsOrderReturnReason;
+import com.xiaozhu.zzpes.entity.OmsOrderReturnReasonExample;
 import com.macro.mall.service.OmsOrderReturnReasonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

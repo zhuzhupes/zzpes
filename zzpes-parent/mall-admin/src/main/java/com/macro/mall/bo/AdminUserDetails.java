@@ -1,7 +1,7 @@
 package com.macro.mall.bo;
 
-import com.macro.mall.model.UmsAdmin;
-import com.macro.mall.model.UmsResource;
+import com.xiaozhu.zzpes.entity.UmsAdmin;
+import com.xiaozhu.zzpes.entity.UmsResource;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

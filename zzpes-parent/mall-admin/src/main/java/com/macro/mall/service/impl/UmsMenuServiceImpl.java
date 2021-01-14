@@ -2,8 +2,8 @@ package com.macro.mall.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.macro.mall.dto.UmsMenuNode;
-import com.macro.mall.mapper.UmsMenuMapper;
-import com.macro.mall.model.*;
+import com.xiaozhu.zzpes.mapper.UmsMenuMapper;
+import com.xiaozhu.zzpes.entity.*;
 import com.macro.mall.service.UmsMenuService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;

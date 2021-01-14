@@ -3,7 +3,7 @@ package com.macro.mall.controller;
 import com.macro.mall.common.api.CommonPage;
 import com.macro.mall.common.api.CommonResult;
 import com.macro.mall.dto.PmsBrandParam;
-import com.macro.mall.model.PmsBrand;
+import com.xiaozhu.zzpes.entity.PmsBrand;
 import com.macro.mall.service.PmsBrandService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

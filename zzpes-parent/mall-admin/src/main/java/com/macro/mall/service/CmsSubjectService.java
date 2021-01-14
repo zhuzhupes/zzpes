@@ -1,6 +1,6 @@
 package com.macro.mall.service;
 
-import com.macro.mall.model.CmsSubject;
+import com.xiaozhu.zzpes.entity.CmsSubject;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
 package com.macro.mall.portal.domain;
 
-import com.macro.mall.model.OmsOrder;
-import com.macro.mall.model.OmsOrderItem;
+import com.xiaozhu.zzpes.entity.OmsOrder;
+import com.xiaozhu.zzpes.entity.OmsOrderItem;
 
 import java.util.List;
 

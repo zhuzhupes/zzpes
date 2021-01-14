@@ -1,6 +1,6 @@
 package com.macro.mall.portal.service;
 
-import com.macro.mall.model.UmsMemberReceiveAddress;
+import com.xiaozhu.zzpes.entity.UmsMemberReceiveAddress;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;

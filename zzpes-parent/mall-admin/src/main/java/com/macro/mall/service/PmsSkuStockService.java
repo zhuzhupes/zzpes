@@ -1,6 +1,6 @@
 package com.macro.mall.service;
 
-import com.macro.mall.model.PmsSkuStock;
+import com.xiaozhu.zzpes.entity.PmsSkuStock;
 
 import java.util.List;
 

@@ -1,9 +1,9 @@
 package com.macro.mall.service.impl;
 
 import com.github.pagehelper.PageHelper;
-import com.macro.mall.mapper.SmsFlashPromotionMapper;
-import com.macro.mall.model.SmsFlashPromotion;
-import com.macro.mall.model.SmsFlashPromotionExample;
+import com.xiaozhu.zzpes.mapper.SmsFlashPromotionMapper;
+import com.xiaozhu.zzpes.entity.SmsFlashPromotion;
+import com.xiaozhu.zzpes.entity.SmsFlashPromotionExample;
 import com.macro.mall.service.SmsFlashPromotionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

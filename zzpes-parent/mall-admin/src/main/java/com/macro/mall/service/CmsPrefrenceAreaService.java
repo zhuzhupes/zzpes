@@ -1,6 +1,6 @@
 package com.macro.mall.service;
 
-import com.macro.mall.model.CmsPrefrenceArea;
+import com.xiaozhu.zzpes.entity.CmsPrefrenceArea;
 
 import java.util.List;
 

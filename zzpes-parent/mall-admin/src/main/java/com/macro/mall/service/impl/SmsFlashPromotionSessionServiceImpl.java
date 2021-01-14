@@ -1,9 +1,9 @@
 package com.macro.mall.service.impl;
 
 import com.macro.mall.dto.SmsFlashPromotionSessionDetail;
-import com.macro.mall.mapper.SmsFlashPromotionSessionMapper;
-import com.macro.mall.model.SmsFlashPromotionSession;
-import com.macro.mall.model.SmsFlashPromotionSessionExample;
+import com.xiaozhu.zzpes.mapper.SmsFlashPromotionSessionMapper;
+import com.xiaozhu.zzpes.entity.SmsFlashPromotionSession;
+import com.xiaozhu.zzpes.entity.SmsFlashPromotionSessionExample;
 import com.macro.mall.service.SmsFlashPromotionProductRelationService;
 import com.macro.mall.service.SmsFlashPromotionSessionService;
 import org.springframework.beans.BeanUtils;

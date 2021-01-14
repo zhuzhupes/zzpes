@@ -2,10 +2,10 @@ package com.macro.mall.service;
 
 import com.macro.mall.dto.UmsAdminParam;
 import com.macro.mall.dto.UpdateAdminPasswordParam;
-import com.macro.mall.model.UmsAdmin;
-import com.macro.mall.model.UmsPermission;
-import com.macro.mall.model.UmsResource;
-import com.macro.mall.model.UmsRole;
+import com.xiaozhu.zzpes.entity.UmsAdmin;
+import com.xiaozhu.zzpes.entity.UmsPermission;
+import com.xiaozhu.zzpes.entity.UmsResource;
+import com.xiaozhu.zzpes.entity.UmsRole;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.transaction.annotation.Transactional;
 

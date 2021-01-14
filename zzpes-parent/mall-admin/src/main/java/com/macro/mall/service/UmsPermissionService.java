@@ -1,7 +1,7 @@
 package com.macro.mall.service;
 
 import com.macro.mall.dto.UmsPermissionNode;
-import com.macro.mall.model.UmsPermission;
+import com.xiaozhu.zzpes.entity.UmsPermission;
 
 import java.util.List;
 

@@ -1,9 +1,9 @@
 package com.macro.mall.portal.domain;
 
-import com.macro.mall.model.SmsCoupon;
-import com.macro.mall.model.SmsCouponHistory;
-import com.macro.mall.model.SmsCouponProductCategoryRelation;
-import com.macro.mall.model.SmsCouponProductRelation;
+import com.xiaozhu.zzpes.entity.SmsCoupon;
+import com.xiaozhu.zzpes.entity.SmsCouponHistory;
+import com.xiaozhu.zzpes.entity.SmsCouponProductCategoryRelation;
+import com.xiaozhu.zzpes.entity.SmsCouponProductRelation;
 
 import java.util.List;
 

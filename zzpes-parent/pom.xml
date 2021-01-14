@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.charlie.ctmpas</groupId>
-    <artifactId>ctmpas</artifactId>
+    <groupId>com.xiaozhu.zzpes</groupId>
+    <artifactId>zzpes-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
@@ -17,10 +17,7 @@
         <module>mall-admin</module>
         <module>mall-search</module>
         <module>mall-portal</module>
-        <module>ctmpas-dal</module>
-        <module>ctmpas-dal</module>
-        <module>ctmpas-service</module>
-        <module>ctmpas-dto</module>
+        <module>zzpes-dal</module>
     </modules>
 
     <parent>
@@ -90,19 +87,19 @@
         <dependencies>
             <!--mall通用模块-->
             <dependency>
-                <groupId>com.charlie.ctmpas</groupId>
+                <groupId>com.xiaozhu.zzpes</groupId>
                 <artifactId>mall-common</artifactId>
                 <version>${mall-common.version}</version>
             </dependency>
             <!--mall中MBG生成模块-->
             <dependency>
-                <groupId>com.charlie.ctmpas</groupId>
+                <groupId>com.xiaozhu.zzpes</groupId>
                 <artifactId>mall-mbg</artifactId>
                 <version>${mall-mbg.version}</version>
             </dependency>
             <!--mall安全模块-->
             <dependency>
-                <groupId>com.charlie.ctmpas</groupId>
+                <groupId>com.xiaozhu.zzpes</groupId>
                 <artifactId>mall-security</artifactId>
                 <version>${mall-security.version}</version>
             </dependency>

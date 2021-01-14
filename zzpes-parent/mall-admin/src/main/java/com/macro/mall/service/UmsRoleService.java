@@ -1,9 +1,9 @@
 package com.macro.mall.service;
 
-import com.macro.mall.model.UmsMenu;
-import com.macro.mall.model.UmsPermission;
-import com.macro.mall.model.UmsResource;
-import com.macro.mall.model.UmsRole;
+import com.xiaozhu.zzpes.entity.UmsMenu;
+import com.xiaozhu.zzpes.entity.UmsPermission;
+import com.xiaozhu.zzpes.entity.UmsResource;
+import com.xiaozhu.zzpes.entity.UmsRole;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;

@@ -1,8 +1,8 @@
 package com.macro.mall.service.impl;
 
-import com.macro.mall.mapper.CmsPrefrenceAreaMapper;
-import com.macro.mall.model.CmsPrefrenceArea;
-import com.macro.mall.model.CmsPrefrenceAreaExample;
+import com.xiaozhu.zzpes.mapper.CmsPrefrenceAreaMapper;
+import com.xiaozhu.zzpes.entity.CmsPrefrenceArea;
+import com.xiaozhu.zzpes.entity.CmsPrefrenceAreaExample;
 import com.macro.mall.service.CmsPrefrenceAreaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

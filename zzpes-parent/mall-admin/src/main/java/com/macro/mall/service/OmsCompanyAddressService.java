@@ -1,6 +1,6 @@
 package com.macro.mall.service;
 
-import com.macro.mall.model.OmsCompanyAddress;
+import com.xiaozhu.zzpes.entity.OmsCompanyAddress;
 
 import java.util.List;
 

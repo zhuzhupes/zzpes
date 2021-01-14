@@ -1,7 +1,7 @@
 package com.macro.mall.dto;
 
-import com.macro.mall.model.PmsProduct;
-import com.macro.mall.model.SmsFlashPromotionProductRelation;
+import com.xiaozhu.zzpes.entity.PmsProduct;
+import com.xiaozhu.zzpes.entity.SmsFlashPromotionProductRelation;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;

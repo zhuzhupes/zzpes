@@ -1,9 +1,9 @@
 package com.macro.mall.dao;
 
-import com.macro.mall.model.UmsAdminRoleRelation;
-import com.macro.mall.model.UmsPermission;
-import com.macro.mall.model.UmsResource;
-import com.macro.mall.model.UmsRole;
+import com.xiaozhu.zzpes.entity.UmsAdminRoleRelation;
+import com.xiaozhu.zzpes.entity.UmsPermission;
+import com.xiaozhu.zzpes.entity.UmsResource;
+import com.xiaozhu.zzpes.entity.UmsRole;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

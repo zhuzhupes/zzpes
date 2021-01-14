@@ -1,6 +1,6 @@
 package com.macro.mall.portal.dao;
 
-import com.macro.mall.model.OmsOrderItem;
+import com.xiaozhu.zzpes.entity.OmsOrderItem;
 import com.macro.mall.portal.domain.OmsOrderDetail;
 import org.apache.ibatis.annotations.Param;
 

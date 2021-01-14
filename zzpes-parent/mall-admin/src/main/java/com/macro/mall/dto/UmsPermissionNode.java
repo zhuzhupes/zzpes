@@ -1,6 +1,6 @@
 package com.macro.mall.dto;
 
-import com.macro.mall.model.UmsPermission;
+import com.xiaozhu.zzpes.entity.UmsPermission;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;

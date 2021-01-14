@@ -1,7 +1,7 @@
 package com.macro.mall.controller;
 
 import com.macro.mall.common.api.CommonResult;
-import com.macro.mall.model.UmsResourceCategory;
+import com.xiaozhu.zzpes.entity.UmsResourceCategory;
 import com.macro.mall.service.UmsResourceCategoryService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

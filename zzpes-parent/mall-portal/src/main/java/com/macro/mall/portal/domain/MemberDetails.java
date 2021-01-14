@@ -1,6 +1,6 @@
 package com.macro.mall.portal.domain;
 
-import com.macro.mall.model.UmsMember;
+import com.xiaozhu.zzpes.entity.UmsMember;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

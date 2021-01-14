@@ -1,6 +1,6 @@
 package com.macro.mall.service;
 
-import com.macro.mall.model.SmsHomeAdvertise;
+import com.xiaozhu.zzpes.entity.SmsHomeAdvertise;
 
 import java.util.List;
 

@@ -1,8 +1,8 @@
 package com.macro.mall.service.impl;
 
-import com.macro.mall.mapper.OmsCompanyAddressMapper;
-import com.macro.mall.model.OmsCompanyAddress;
-import com.macro.mall.model.OmsCompanyAddressExample;
+import com.xiaozhu.zzpes.mapper.OmsCompanyAddressMapper;
+import com.xiaozhu.zzpes.entity.OmsCompanyAddress;
+import com.xiaozhu.zzpes.entity.OmsCompanyAddressExample;
 import com.macro.mall.service.OmsCompanyAddressService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

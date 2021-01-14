@@ -1,6 +1,6 @@
 package com.macro.mall.portal.service.impl;
 
-import com.macro.mall.model.UmsMember;
+import com.xiaozhu.zzpes.entity.UmsMember;
 import com.macro.mall.portal.domain.MemberProductCollection;
 import com.macro.mall.portal.repository.MemberProductCollectionRepository;
 import com.macro.mall.portal.service.MemberCollectionService;

@@ -5,7 +5,7 @@ import cn.hutool.json.JSONUtil;
 import com.macro.mall.dao.PmsMemberPriceDao;
 import com.macro.mall.dao.PmsProductDao;
 import com.macro.mall.dto.PmsProductResult;
-import com.macro.mall.model.PmsMemberPrice;
+import com.xiaozhu.zzpes.entity.PmsMemberPrice;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

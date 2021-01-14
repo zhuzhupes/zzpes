@@ -1,6 +1,6 @@
 package com.macro.mall.portal.dao;
 
-import com.macro.mall.model.SmsCoupon;
+import com.xiaozhu.zzpes.entity.SmsCoupon;
 import com.macro.mall.portal.domain.SmsCouponHistoryDetail;
 import io.swagger.models.auth.In;
 import org.apache.ibatis.annotations.Param;

@@ -1,8 +1,8 @@
 package com.macro.mall.portal.service.impl;
 
 import com.github.pagehelper.PageHelper;
-import com.macro.mall.mapper.*;
-import com.macro.mall.model.*;
+import com.xiaozhu.zzpes.mapper.*;
+import com.xiaozhu.zzpes.entity.*;
 import com.macro.mall.portal.dao.HomeDao;
 import com.macro.mall.portal.domain.FlashPromotionProduct;
 import com.macro.mall.portal.domain.HomeContentResult;

@@ -1,7 +1,7 @@
 package com.macro.mall.service.impl;
 
-import com.macro.mall.mapper.OmsOrderSettingMapper;
-import com.macro.mall.model.OmsOrderSetting;
+import com.xiaozhu.zzpes.mapper.OmsOrderSettingMapper;
+import com.xiaozhu.zzpes.entity.OmsOrderSetting;
 import com.macro.mall.service.OmsOrderSettingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

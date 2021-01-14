@@ -1,6 +1,6 @@
 package com.macro.mall.service;
 
-import com.macro.mall.model.OmsOrderSetting;
+import com.xiaozhu.zzpes.entity.OmsOrderSetting;
 
 /**
  * 订单设置Service

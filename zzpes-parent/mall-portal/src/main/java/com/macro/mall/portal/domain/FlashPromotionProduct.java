@@ -1,6 +1,6 @@
 package com.macro.mall.portal.domain;
 
-import com.macro.mall.model.PmsProduct;
+import com.xiaozhu.zzpes.entity.PmsProduct;
 import lombok.Getter;
 import lombok.Setter;
 

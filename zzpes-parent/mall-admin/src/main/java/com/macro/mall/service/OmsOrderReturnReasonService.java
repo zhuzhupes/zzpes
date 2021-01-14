@@ -1,6 +1,6 @@
 package com.macro.mall.service;
 
-import com.macro.mall.model.OmsOrderReturnReason;
+import com.xiaozhu.zzpes.entity.OmsOrderReturnReason;
 
 import java.util.List;
 

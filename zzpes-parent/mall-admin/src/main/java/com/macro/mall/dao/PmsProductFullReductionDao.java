@@ -1,6 +1,6 @@
 package com.macro.mall.dao;
 
-import com.macro.mall.model.PmsProductFullReduction;
+import com.xiaozhu.zzpes.entity.PmsProductFullReduction;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

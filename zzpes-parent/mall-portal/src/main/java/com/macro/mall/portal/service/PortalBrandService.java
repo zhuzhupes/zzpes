@@ -1,8 +1,8 @@
 package com.macro.mall.portal.service;
 
 import com.macro.mall.common.api.CommonPage;
-import com.macro.mall.model.PmsBrand;
-import com.macro.mall.model.PmsProduct;
+import com.xiaozhu.zzpes.entity.PmsBrand;
+import com.xiaozhu.zzpes.entity.PmsProduct;
 
 import java.util.List;
 

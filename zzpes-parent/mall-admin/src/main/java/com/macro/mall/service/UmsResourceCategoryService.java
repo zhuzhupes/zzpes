@@ -1,6 +1,6 @@
 package com.macro.mall.service;
 
-import com.macro.mall.model.UmsResourceCategory;
+import com.xiaozhu.zzpes.entity.UmsResourceCategory;
 
 import java.util.List;
 

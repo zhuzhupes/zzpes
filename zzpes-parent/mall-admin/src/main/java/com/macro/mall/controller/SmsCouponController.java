@@ -3,7 +3,7 @@ package com.macro.mall.controller;
 import com.macro.mall.common.api.CommonPage;
 import com.macro.mall.common.api.CommonResult;
 import com.macro.mall.dto.SmsCouponParam;
-import com.macro.mall.model.SmsCoupon;
+import com.xiaozhu.zzpes.entity.SmsCoupon;
 import com.macro.mall.service.SmsCouponService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

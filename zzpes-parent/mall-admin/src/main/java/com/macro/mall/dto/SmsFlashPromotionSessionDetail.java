@@ -1,6 +1,6 @@
 package com.macro.mall.dto;
 
-import com.macro.mall.model.SmsFlashPromotionSession;
+import com.xiaozhu.zzpes.entity.SmsFlashPromotionSession;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;

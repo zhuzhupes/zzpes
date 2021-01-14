@@ -1,6 +1,6 @@
 package com.macro.mall.service;
 
-import com.macro.mall.model.UmsMemberLevel;
+import com.xiaozhu.zzpes.entity.UmsMemberLevel;
 
 import java.util.List;
 

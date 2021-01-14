@@ -1,7 +1,7 @@
 package com.macro.mall.service;
 
 import com.macro.mall.dto.SmsFlashPromotionProduct;
-import com.macro.mall.model.SmsFlashPromotionProductRelation;
+import com.xiaozhu.zzpes.entity.SmsFlashPromotionProductRelation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;

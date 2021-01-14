@@ -1,7 +1,7 @@
 package com.macro.mall.demo.service;
 
 import com.macro.mall.demo.dto.PmsBrandDto;
-import com.macro.mall.model.PmsBrand;
+import com.xiaozhu.zzpes.entity.PmsBrand;
 
 import java.util.List;
 

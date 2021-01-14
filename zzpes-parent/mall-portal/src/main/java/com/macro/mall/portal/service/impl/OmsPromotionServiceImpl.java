@@ -1,9 +1,9 @@
 package com.macro.mall.portal.service.impl;
 
-import com.macro.mall.model.OmsCartItem;
-import com.macro.mall.model.PmsProductFullReduction;
-import com.macro.mall.model.PmsProductLadder;
-import com.macro.mall.model.PmsSkuStock;
+import com.xiaozhu.zzpes.entity.OmsCartItem;
+import com.xiaozhu.zzpes.entity.PmsProductFullReduction;
+import com.xiaozhu.zzpes.entity.PmsProductLadder;
+import com.xiaozhu.zzpes.entity.PmsSkuStock;
 import com.macro.mall.portal.dao.PortalProductDao;
 import com.macro.mall.portal.domain.CartPromotionItem;
 import com.macro.mall.portal.domain.PromotionProduct;

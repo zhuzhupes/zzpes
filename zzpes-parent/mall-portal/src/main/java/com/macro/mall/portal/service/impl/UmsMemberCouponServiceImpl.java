@@ -2,8 +2,8 @@ package com.macro.mall.portal.service.impl;
 
 import cn.hutool.core.collection.CollUtil;
 import com.macro.mall.common.exception.Asserts;
-import com.macro.mall.mapper.*;
-import com.macro.mall.model.*;
+import com.xiaozhu.zzpes.mapper.*;
+import com.xiaozhu.zzpes.entity.*;
 import com.macro.mall.portal.dao.SmsCouponHistoryDao;
 import com.macro.mall.portal.domain.CartPromotionItem;
 import com.macro.mall.portal.domain.SmsCouponHistoryDetail;

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaozhu.zzpes.mapper.PrescriptionOverallInfoMapper">
+  <resultMap id="BaseResultMap" type="com.xiaozhu.zzpes.entity.PrescriptionOverallInfo">
+    <id column="prescription_id" jdbcType="BIGINT" property="prescriptionId" />
+    <result column="patient_id" jdbcType="VARCHAR" property="patientId" />
+    <result column="prescription_last_id" jdbcType="VARCHAR" property="prescriptionLastId" />
+    <result column="prescription_next_id" jdbcType="VARCHAR" property="prescriptionNextId" />
+    <result column="final_state" jdbcType="VARCHAR" property="finalState" />
+    <result column="prescription_date" jdbcType="DATE" property="prescriptionDate" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    prescription_id, patient_id, prescription_last_id, prescription_next_id, final_state, 
+    prescription_date
+  </sql>
+  <select id="selectByExample" parameterType="com.xiaozhu.zzpes.entity.PrescriptionOverallInfoExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from prescription_overall_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from prescription_overall_info
+    where prescription_id = #{prescriptionId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from prescription_overall_info
+    where prescription_id = #{prescriptionId,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xiaozhu.zzpes.entity.PrescriptionOverallInfoExample">
+    delete from prescription_overall_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xiaozhu.zzpes.entity.PrescriptionOverallInfo">
+    insert into prescription_overall_info (prescription_id, patient_id, prescription_last_id, 
+      prescription_next_id, final_state, prescription_date
+      )
+    values (#{prescriptionId,jdbcType=BIGINT}, #{patientId,jdbcType=VARCHAR}, #{prescriptionLastId,jdbcType=VARCHAR}, 
+      #{prescriptionNextId,jdbcType=VARCHAR}, #{finalState,jdbcType=VARCHAR}, #{prescriptionDate,jdbcType=DATE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaozhu.zzpes.entity.PrescriptionOverallInfo">
+    insert into prescription_overall_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="prescriptionId != null">
+        prescription_id,
+      </if>
+      <if test="patientId != null">
+        patient_id,
+      </if>
+      <if test="prescriptionLastId != null">
+        prescription_last_id,
+      </if>
+      <if test="prescriptionNextId != null">
+        prescription_next_id,
+      </if>
+      <if test="finalState != null">
+        final_state,
+      </if>
+      <if test="prescriptionDate != null">
+        prescription_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="prescriptionId != null">
+        #{prescriptionId,jdbcType=BIGINT},
+      </if>
+      <if test="patientId != null">
+        #{patientId,jdbcType=VARCHAR},
+      </if>
+      <if test="prescriptionLastId != null">
+        #{prescriptionLastId,jdbcType=VARCHAR},
+      </if>
+      <if test="prescriptionNextId != null">
+        #{prescriptionNextId,jdbcType=VARCHAR},
+      </if>
+      <if test="finalState != null">
+        #{finalState,jdbcType=VARCHAR},
+      </if>
+      <if test="prescriptionDate != null">
+        #{prescriptionDate,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xiaozhu.zzpes.entity.PrescriptionOverallInfoExample" resultType="java.lang.Long">
+    select count(*) from prescription_overall_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update prescription_overall_info
+    <set>
+      <if test="record.prescriptionId != null">
+        prescription_id = #{record.prescriptionId,jdbcType=BIGINT},
+      </if>
+      <if test="record.patientId != null">
+        patient_id = #{record.patientId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.prescriptionLastId != null">
+        prescription_last_id = #{record.prescriptionLastId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.prescriptionNextId != null">
+        prescription_next_id = #{record.prescriptionNextId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.finalState != null">
+        final_state = #{record.finalState,jdbcType=VARCHAR},
+      </if>
+      <if test="record.prescriptionDate != null">
+        prescription_date = #{record.prescriptionDate,jdbcType=DATE},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update prescription_overall_info
+    set prescription_id = #{record.prescriptionId,jdbcType=BIGINT},
+      patient_id = #{record.patientId,jdbcType=VARCHAR},
+      prescription_last_id = #{record.prescriptionLastId,jdbcType=VARCHAR},
+      prescription_next_id = #{record.prescriptionNextId,jdbcType=VARCHAR},
+      final_state = #{record.finalState,jdbcType=VARCHAR},
+      prescription_date = #{record.prescriptionDate,jdbcType=DATE}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaozhu.zzpes.entity.PrescriptionOverallInfo">
+    update prescription_overall_info
+    <set>
+      <if test="patientId != null">
+        patient_id = #{patientId,jdbcType=VARCHAR},
+      </if>
+      <if test="prescriptionLastId != null">
+        prescription_last_id = #{prescriptionLastId,jdbcType=VARCHAR},
+      </if>
+      <if test="prescriptionNextId != null">
+        prescription_next_id = #{prescriptionNextId,jdbcType=VARCHAR},
+      </if>
+      <if test="finalState != null">
+        final_state = #{finalState,jdbcType=VARCHAR},
+      </if>
+      <if test="prescriptionDate != null">
+        prescription_date = #{prescriptionDate,jdbcType=DATE},
+      </if>
+    </set>
+    where prescription_id = #{prescriptionId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaozhu.zzpes.entity.PrescriptionOverallInfo">
+    update prescription_overall_info
+    set patient_id = #{patientId,jdbcType=VARCHAR},
+      prescription_last_id = #{prescriptionLastId,jdbcType=VARCHAR},
+      prescription_next_id = #{prescriptionNextId,jdbcType=VARCHAR},
+      final_state = #{finalState,jdbcType=VARCHAR},
+      prescription_date = #{prescriptionDate,jdbcType=DATE}
+    where prescription_id = #{prescriptionId,jdbcType=BIGINT}
+  </update>
+</mapper>

@@ -3,7 +3,7 @@ package com.macro.mall.dao;
 import com.macro.mall.dto.OmsOrderDeliveryParam;
 import com.macro.mall.dto.OmsOrderDetail;
 import com.macro.mall.dto.OmsOrderQueryParam;
-import com.macro.mall.model.OmsOrder;
+import com.xiaozhu.zzpes.entity.OmsOrder;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

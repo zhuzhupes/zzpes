@@ -1,7 +1,7 @@
 package com.macro.mall;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.macro.mall.model.PmsProduct;
+import com.xiaozhu.zzpes.entity.PmsProduct;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
