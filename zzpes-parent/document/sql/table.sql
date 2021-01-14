@@ -9,3 +9,4 @@ flush privileges;
 create user 'test123'@'%' identified by 'test123';
 grant ALl privileges ON  zzpes.*  TO  'test123'@'%';
 flush privileges;
+use zzpes;
