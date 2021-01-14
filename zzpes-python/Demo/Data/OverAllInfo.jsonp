@@ -1,0 +1,89 @@
+{
+	"code": 1,
+	"msg": "SUCCESS",
+	"data": {
+		"list": [
+			{
+				"thumb": "https://dl.pvp.xoyo.com/prod/icons/jx3avatar/cangyun/4.png",
+				"tags": [],
+				"attrs": {
+					"role_level": 110,
+					"role_equipment_point": 67869,
+					"role_experience_point": 35135,
+					"role_sect": "苍云",
+					"role_camp": "中立",
+					"role_shape": "萝莉"
+				},
+				"state": 3,
+				"single_unit_size": 1,
+				"remain_unit_count": 1,
+				"zone_id": "z05",
+				"server_id": "gate0505",
+				"seller_role_name": "既***",
+				"is_followed": 0,
+				"followed_num": 8,
+				"consignment_id": "660824847246577664",
+				"is_new": 1,
+				"single_unit_price": 540000,
+				"remaining_time": 553879,
+				"info": "电信五区-唯我独尊-既***"
+			},
+			{
+				"thumb": "https://dl.pvp.xoyo.com/prod/icons/jx3avatar/penglai/4.png",
+				"tags": [],
+				"attrs": {
+					"role_level": 110,
+					"role_equipment_point": 55899,
+					"role_experience_point": 61085,
+					"role_sect": "蓬莱",
+					"role_camp": "中立",
+					"role_shape": "萝莉"
+				},
+				"state": 3,
+				"single_unit_size": 1,
+				"remain_unit_count": 1,
+				"zone_id": "z21",
+				"server_id": "gate2107",
+				"seller_role_name": "甜***",
+				"is_followed": 0,
+				"followed_num": 4,
+				"consignment_id": "656471953332391936",
+				"is_new": 1,
+				"single_unit_price": 540000,
+				"remaining_time": 536583,
+				"info": "双线一区-天鹅坪-甜***"
+			},
+			{
+				"thumb": "https://dl.pvp.xoyo.com/prod/icons/jx3avatar/cangyun/2.png",
+				"tags": [],
+				"attrs": {
+					"role_level": 110,
+					"role_equipment_point": 54828,
+					"role_experience_point": 31530,
+					"role_sect": "苍云",
+					"role_camp": "恶人谷",
+					"role_shape": "成男"
+				},
+				"state": 5,
+				"single_unit_size": 1,
+				"remain_unit_count": 1,
+				"zone_id": "z05",
+				"server_id": "gate0524",
+				"seller_role_name": "燕***",
+				"is_followed": 0,
+				"followed_num": 2,
+				"consignment_id": "654308504932384768",
+				"is_new": 1,
+				"single_unit_price": 540000,
+				"remaining_time": 1065398,
+				"info": "电信五区-剑胆琴心-燕***"
+			}
+		],
+		"page_size": 10,
+		"total_page": 1,
+		"current_page": 1,
+		"total_record": 3,
+		"request_id": "71830521c2cd668f5db06d7e6085fda06d42f34d",
+		"ts_session_id": "9gH444lAswHMAAsmujZW8ZyxBJxBZi4PRxCRqYuV"
+	}
+}

@@ -1,0 +1,120 @@
+__xfe10({
+	"code": 1,
+	"msg": "SUCCESS",
+	"data": {
+		"additional_data": {
+			"pet": [
+				{
+					"icon": "https://dl.pvp.xoyo.com/prod/icons/CW_630_14.png?v=2",
+					"id": 3,
+					"name": "蟹卒"
+				},
+				{
+					"icon": "https://dl.pvp.xoyo.com/prod/icons/CHW_06.png?v=2",
+					"id": 10,
+					"name": "鸡小蒙"
+				},
+				{
+					"icon": "https://dl.pvp.xoyo.com/prod/icons/CHW_05.png?v=2",
+					"id": 11,
+					"name": "吉祥虎"
+				},
+				{
+					"icon": "https://dl.pvp.xoyo.com/prod/icons/extend_14_1_4.png?v=2",
+					"id": 62,
+					"name": "机关·玉狮子"
+				},
+				{
+					"icon": "https://dl.pvp.xoyo.com/prod/icons/CW_0318_2.png?v=2",
+					"id": 68,
+					"name": "糖豆"
+				},
+				{
+					"icon": "https://dl.pvp.xoyo.com/prod/icons/cw_0527_01.png?v=2",
+					"id": 75,
+					"name": "咕咕"
+				},
+				{
+					"icon": "https://dl.pvp.xoyo.com/prod/icons/GJ_0819_8.png?v=2",
+					"id": 81,
+					"name": "大爵一家"
+				},
+				{
+					"icon": "https://dl.pvp.xoyo.com/prod/icons/CW_0318.png?v=2",
+					"id": 114,
+					"name": "黑豆"
+				},
+				{
+					"icon": "https://dl.pvp.xoyo.com/prod/icons/daoj_16_04_12_03.png?v=2",
+					"id": 147,
+					"name": "石敢当"
+				},
+				{
+					"icon": "https://dl.pvp.xoyo.com/prod/icons/daoj_16_8_25_31.png?v=2",
+					"id": 211,
+					"name": "九影"
+				},
+				{
+					"icon": "https://dl.pvp.xoyo.com/prod/icons/daoj_17_4_20_222.png?v=2",
+					"id": 228,
+					"name": "小叮当"
+				},
+				{
+					"icon": "https://dl.pvp.xoyo.com/prod/icons/daoj_17_8_28_6.png?v=2",
+					"id": 232,
+					"name": "黑魂"
+				},
+				{
+					"icon": "https://dl.pvp.xoyo.com/prod/icons/daoj_17_12_29_19.png?v=2",
+					"id": 240,
+					"name": "小小豆"
+				},
+				{
+					"icon": "https://dl.pvp.xoyo.com/prod/icons/daoj_18_6_20_45.png?v=2",
+					"id": 241,
+					"name": "雪漓"
+				},
+				{
+					"icon": "https://dl.pvp.xoyo.com/prod/icons/daoj_18_8_13_28.png?v=2",
+					"id": 257,
+					"name": "一叶落"
+				},
+				{
+					"icon": "https://dl.pvp.xoyo.com/prod/icons/daoj_19_1_17_8.png?v=2",
+					"id": 277,
+					"name": "福猪兆瑞"
+				},
+				{
+					"icon": "https://dl.pvp.xoyo.com/prod/icons/daoj_19_1_17_9.png?v=2",
+					"id": 278,
+					"name": "乌豚镇厄"
+				},
+				{
+					"icon": "https://dl.pvp.xoyo.com/prod/icons/item_19_6_20_5.png?v=2",
+					"id": 286,
+					"name": "蛋蛋侠"
+				},
+				{
+					"icon": "https://dl.pvp.xoyo.com/prod/icons/item_19_7_15_19.png?v=2",
+					"id": 306,
+					"name": "九屈蟠"
+				},
+				{
+					"icon": "https://dl.pvp.xoyo.com/prod/icons/item_19_7_15_20.png?v=2",
+					"id": 307,
+					"name": "百玄狰"
+				},
+				{
+					"icon": "https://dl.pvp.xoyo.com/prod/icons/item_20_5_22_2.png?v=2",
+					"id": 337,
+					"name": "雀斑"
+				}
+			],
+			"petSummary": {
+				"adventureCount": 5
+			}
+		},
+		"request_id": "4a87a84b0a7081b7ded4d5ad3f80b38357e9e3bc",
+		"ts_session_id": "i7dfRXGjTNI0W5qWzDWnB5H1aSuEdx918l4kbZu5"
+	}
+});

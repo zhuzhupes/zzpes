@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.charlie.ctmpas.mapper.PatientInfoMapper">
+  <resultMap id="BaseResultMap" type="com.charlie.ctmpas.entity.PatientInfo">
+    <id column="patient_seq" jdbcType="BIGINT" property="patientSeq" />
+    <result column="patient_name" jdbcType="VARCHAR" property="patientName" />
+    <result column="start_date" jdbcType="DATE" property="startDate" />
+    <result column="treat_times" jdbcType="INTEGER" property="treatTimes" />
+    <result column="cure_times" jdbcType="INTEGER" property="cureTimes" />
+    <result column="last_update_time" jdbcType="TIME" property="lastUpdateTime" />
+    <result column="last_update_type" jdbcType="VARCHAR" property="lastUpdateType" />
+    <result column="last_update_user" jdbcType="VARCHAR" property="lastUpdateUser" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    patient_seq, patient_name, start_date, treat_times, cure_times, last_update_time, 
+    last_update_type, last_update_user
+  </sql>
+  <select id="selectByExample" parameterType="com.charlie.ctmpas.entity.PatientInfoExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from patient_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from patient_info
+    where patient_seq = #{patientSeq,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from patient_info
+    where patient_seq = #{patientSeq,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.charlie.ctmpas.entity.PatientInfoExample">
+    delete from patient_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.charlie.ctmpas.entity.PatientInfo">
+    insert into patient_info (patient_seq, patient_name, start_date, 
+      treat_times, cure_times, last_update_time, 
+      last_update_type, last_update_user)
+    values (#{patientSeq,jdbcType=BIGINT}, #{patientName,jdbcType=VARCHAR}, #{startDate,jdbcType=DATE}, 
+      #{treatTimes,jdbcType=INTEGER}, #{cureTimes,jdbcType=INTEGER}, #{lastUpdateTime,jdbcType=TIME}, 
+      #{lastUpdateType,jdbcType=VARCHAR}, #{lastUpdateUser,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.charlie.ctmpas.entity.PatientInfo">
+    <selectKey keyProperty="patientSeq" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into patient_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="patientSeq != null">
+        patient_seq,
+      </if>
+      <if test="patientName != null">
+        patient_name,
+      </if>
+      <if test="startDate != null">
+        start_date,
+      </if>
+      <if test="treatTimes != null">
+        treat_times,
+      </if>
+      <if test="cureTimes != null">
+        cure_times,
+      </if>
+      <if test="lastUpdateTime != null">
+        last_update_time,
+      </if>
+      <if test="lastUpdateType != null">
+        last_update_type,
+      </if>
+      <if test="lastUpdateUser != null">
+        last_update_user,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="patientSeq != null">
+        #{patientSeq,jdbcType=BIGINT},
+      </if>
+      <if test="patientName != null">
+        #{patientName,jdbcType=VARCHAR},
+      </if>
+      <if test="startDate != null">
+        #{startDate,jdbcType=DATE},
+      </if>
+      <if test="treatTimes != null">
+        #{treatTimes,jdbcType=INTEGER},
+      </if>
+      <if test="cureTimes != null">
+        #{cureTimes,jdbcType=INTEGER},
+      </if>
+      <if test="lastUpdateTime != null">
+        #{lastUpdateTime,jdbcType=TIME},
+      </if>
+      <if test="lastUpdateType != null">
+        #{lastUpdateType,jdbcType=VARCHAR},
+      </if>
+      <if test="lastUpdateUser != null">
+        #{lastUpdateUser,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.charlie.ctmpas.entity.PatientInfoExample" resultType="java.lang.Long">
+    select count(*) from patient_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update patient_info
+    <set>
+      <if test="record.patientSeq != null">
+        patient_seq = #{record.patientSeq,jdbcType=BIGINT},
+      </if>
+      <if test="record.patientName != null">
+        patient_name = #{record.patientName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.startDate != null">
+        start_date = #{record.startDate,jdbcType=DATE},
+      </if>
+      <if test="record.treatTimes != null">
+        treat_times = #{record.treatTimes,jdbcType=INTEGER},
+      </if>
+      <if test="record.cureTimes != null">
+        cure_times = #{record.cureTimes,jdbcType=INTEGER},
+      </if>
+      <if test="record.lastUpdateTime != null">
+        last_update_time = #{record.lastUpdateTime,jdbcType=TIME},
+      </if>
+      <if test="record.lastUpdateType != null">
+        last_update_type = #{record.lastUpdateType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.lastUpdateUser != null">
+        last_update_user = #{record.lastUpdateUser,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update patient_info
+    set patient_seq = #{record.patientSeq,jdbcType=BIGINT},
+      patient_name = #{record.patientName,jdbcType=VARCHAR},
+      start_date = #{record.startDate,jdbcType=DATE},
+      treat_times = #{record.treatTimes,jdbcType=INTEGER},
+      cure_times = #{record.cureTimes,jdbcType=INTEGER},
+      last_update_time = #{record.lastUpdateTime,jdbcType=TIME},
+      last_update_type = #{record.lastUpdateType,jdbcType=VARCHAR},
+      last_update_user = #{record.lastUpdateUser,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.charlie.ctmpas.entity.PatientInfo">
+    update patient_info
+    <set>
+      <if test="patientName != null">
+        patient_name = #{patientName,jdbcType=VARCHAR},
+      </if>
+      <if test="startDate != null">
+        start_date = #{startDate,jdbcType=DATE},
+      </if>
+      <if test="treatTimes != null">
+        treat_times = #{treatTimes,jdbcType=INTEGER},
+      </if>
+      <if test="cureTimes != null">
+        cure_times = #{cureTimes,jdbcType=INTEGER},
+      </if>
+      <if test="lastUpdateTime != null">
+        last_update_time = #{lastUpdateTime,jdbcType=TIME},
+      </if>
+      <if test="lastUpdateType != null">
+        last_update_type = #{lastUpdateType,jdbcType=VARCHAR},
+      </if>
+      <if test="lastUpdateUser != null">
+        last_update_user = #{lastUpdateUser,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where patient_seq = #{patientSeq,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.charlie.ctmpas.entity.PatientInfo">
+    update patient_info
+    set patient_name = #{patientName,jdbcType=VARCHAR},
+      start_date = #{startDate,jdbcType=DATE},
+      treat_times = #{treatTimes,jdbcType=INTEGER},
+      cure_times = #{cureTimes,jdbcType=INTEGER},
+      last_update_time = #{lastUpdateTime,jdbcType=TIME},
+      last_update_type = #{lastUpdateType,jdbcType=VARCHAR},
+      last_update_user = #{lastUpdateUser,jdbcType=VARCHAR}
+    where patient_seq = #{patientSeq,jdbcType=BIGINT}
+  </update>
+</mapper>

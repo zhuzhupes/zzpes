@@ -1,0 +1,72 @@
+__xfe10({
+	"code": 1,
+	"msg": "SUCCESS",
+	"data": {
+		"additional_data": {
+			"adventure": [
+				{
+					"classify": 1,
+					"icon": {
+						"height": 49,
+						"url": "https://dl.pvp.xoyo.com/prod/icons/UICommon/LuckyMeeting2.UITex.png?v=2",
+						"width": 224,
+						"x": 538,
+						"y": 255
+					},
+					"id": 26,
+					"name": "石敢当"
+				},
+				{
+					"classify": 2,
+					"icon": {
+						"height": 49,
+						"url": "https://dl.pvp.xoyo.com/prod/icons/UICommon/LuckyMeeting2.UITex.png?v=2",
+						"width": 224,
+						"x": 764,
+						"y": 357
+					},
+					"id": 41,
+					"name": "平生心愿"
+				},
+				{
+					"classify": 1,
+					"icon": {
+						"height": 49,
+						"url": "https://dl.pvp.xoyo.com/prod/icons/UICommon/LuckyMeeting2.UITex.png?v=2",
+						"width": 224,
+						"x": 538,
+						"y": 459
+					},
+					"id": 42,
+					"name": "北行镖"
+				},
+				{
+					"classify": 1,
+					"icon": {
+						"height": 49,
+						"url": "https://dl.pvp.xoyo.com/prod/icons/UICommon/LuckyMeeting2.UITex.png?v=2",
+						"width": 224,
+						"x": 764,
+						"y": 765
+					},
+					"id": 80,
+					"name": "莫贪杯"
+				},
+				{
+					"classify": 2,
+					"icon": {
+						"height": 49,
+						"url": "https://dl.pvp.xoyo.com/prod/icons/UICommon/LuckyMeeting2.UITex.png?v=2",
+						"width": 224,
+						"x": 226,
+						"y": 605
+					},
+					"id": 50,
+					"name": "韶华故"
+				}
+			]
+		},
+		"request_id": "2112000c045c1fb88a267357d59b2449082100c9",
+		"ts_session_id": "i7dfRXGjTNI0W5qWzDWnB5H1aSuEdx918l4kbZu5"
+	}
+});
