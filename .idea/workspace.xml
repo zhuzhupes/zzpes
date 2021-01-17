@@ -19,7 +19,23 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb74dca1-e1f2-45f0-b021-58ec97412434" name="Default Changelist" comment="">
+    <list default="true" id="eb74dca1-e1f2-45f0-b021-58ec97412434" name="Default Changelist" comment="修改代码生成器">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/代码备份/generator-master/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/代码备份/generator-master/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/代码备份/generator-master/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/代码备份/generator-master/generator.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/代码备份/generator-master/src/main/java/com/sws/myGenerator/CommentGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/代码备份/generator-master/src/main/java/com/sws/myGenerator/common/XiaoZhuUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/代码备份/generator-master/src/main/java/com/sws/myGenerator/config/JavaControllerGeneratorConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/代码备份/generator-master/src/main/java/com/sws/myGenerator/plugin/MyLombokPlugin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/代码备份/mall-admin/mall-admin.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/代码备份/zzpes-dal/zzpes-dal.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/代码备份/zzpes-mbg/zzpes-mbg.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/代码备份/zzpes-mbg01151000/.idea/zzpes-mbg.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/代码备份/zzpes-mbg01151000/zzpes-mbg.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/代码备份/zzpes-mbg01151915/zzpes-mbg.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,10 +64,25 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/zzpes-parent" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -62,6 +93,7 @@
       <option name="presentableId" value="Default" />
       <updated>1610551316675</updated>
       <workItem from="1610554732912" duration="122000" />
+      <workItem from="1610856066502" duration="414000" />
     </task>
     <task id="LOCAL-00001" summary="项目初步建立">
       <created>1610552253515</created>
@@ -77,7 +109,35 @@
       <option name="project" value="LOCAL" />
       <updated>1610553359469</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="上传">
+      <created>1610856157342</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1610856157342</updated>
+    </task>
+    <task id="LOCAL-00004" summary="上传">
+      <created>1610856254340</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1610856254340</updated>
+    </task>
+    <task id="LOCAL-00005" summary="上传">
+      <created>1610856358582</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1610856358582</updated>
+    </task>
+    <task id="LOCAL-00006" summary="修改代码生成器">
+      <created>1610856471873</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1610856471873</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -99,6 +159,11 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="项目初步建立" />
     <MESSAGE value="上传" />
-    <option name="LAST_COMMIT_MESSAGE" value="上传" />
+    <MESSAGE value="修改代码生成器" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改代码生成器" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
