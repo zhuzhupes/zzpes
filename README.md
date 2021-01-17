@@ -41,13 +41,14 @@
 
 
 
+
 ## 一些话说
 1. 数据采集方面，简单使用Python
 
 2. 模型训练（还没开始）准备使用pytorch
 
 3. web和后端使用mall项目，很方便
-   [macrozheng/mall项目](https://github.com/macrozheng/mall)
+[macrozheng/mall项目](https://github.com/macrozheng/mall)
 
 4. mall项目自带的代码生成器不能生成controller，而且各人也不喜欢getting和setting，因此**在其基础上**进行修改，参考
-   [代码生成器](www.baidu.com)  并修改controller和comment等最后形成代码生成器
+[代码生成器](www.baidu.com)  并修改controller和comment等最后形成代码生成器
