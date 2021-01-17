@@ -11,13 +11,14 @@
 
     <modules>
         <module>mall-common</module>
-        <module>mall-mbg</module>
+        <module>zzpes-dal</module>
         <module>mall-security</module>
         <module>mall-demo</module>
         <module>mall-admin</module>
         <module>mall-search</module>
         <module>mall-portal</module>
-        <module>zzpes-dal</module>
+        <module>xiaozhu-mbg</module>
+        <module>xiaozhu-core</module>
     </modules>
 
     <parent>
@@ -51,7 +52,7 @@
         <minio.version>3.0.10</minio.version>
         <guava.version>20.0</guava.version>
         <mall-common.version>1.0-SNAPSHOT</mall-common.version>
-        <mall-mbg.version>1.0-SNAPSHOT</mall-mbg.version>
+        <zzpes-dal.version>1.0-SNAPSHOT</zzpes-dal.version>
         <mall-security.version>1.0-SNAPSHOT</mall-security.version>
     </properties>
 
@@ -81,6 +82,21 @@
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-annotation</artifactId>
+            <version>3.3.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-core</artifactId>
+            <version>3.3.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.jsqlparser</groupId>
+            <artifactId>jsqlparser</artifactId>
+            <version>1.4</version>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>
@@ -94,8 +110,8 @@
             <!--mall中MBG生成模块-->
             <dependency>
                 <groupId>com.xiaozhu.zzpes</groupId>
-                <artifactId>mall-mbg</artifactId>
-                <version>${mall-mbg.version}</version>
+                <artifactId>zzpes-dal</artifactId>
+                <version>${zzpes-dal.version}</version>
             </dependency>
             <!--mall安全模块-->
             <dependency>

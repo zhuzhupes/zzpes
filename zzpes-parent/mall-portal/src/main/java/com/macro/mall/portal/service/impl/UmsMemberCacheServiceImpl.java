@@ -4,7 +4,6 @@ import com.xiaozhu.zzpes.mapper.UmsMemberMapper;
 import com.xiaozhu.zzpes.entity.UmsMember;
 import com.macro.mall.portal.service.UmsMemberCacheService;
 import com.macro.mall.security.annotation.CacheException;
-import com.macro.mall.security.config.RedisConfig;
 import com.macro.mall.security.service.RedisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

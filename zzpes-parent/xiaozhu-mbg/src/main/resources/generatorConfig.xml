@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <properties resource="generator.properties"/>
+    <context id="MySqlContext" targetRuntime="MyBatis3" defaultModelType="flat">
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+        <property name="javaFileEncoding" value="UTF-8"/>
+        <!-- 为模型生成序列化方法-->
+<!--        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>-->
+        <!-- 为生成的Java模型创建一个toString方法 -->
+<!--        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>-->
+        <!--生成mapper.xml时覆盖原文件-->
+        <plugin type="org.mybatis.generator.plugins.UnmergeableXmlMappersPlugin" />
+        <plugin type="com.xiaozhu.mbg.MyLombokPlugin">
+            <property name="defaultSerialVersionUID" value="true"/>
+            <!--            <property name="supperClass" value="false" />-->
+<!--            <property name="ignoreFields"  value="" />-->
+        </plugin>
+        <plugin type="com.xiaozhu.mbg.ServiceAndControllerGeneratorPlugin" >
+            <property name="targetProject" value="${output.project}"/>
+            <property name="servicePackage" value="${output.servicePackage}"/>
+            <property name="serviceProject" value="${output.serviceProject}"/>
+            <property name="serviceImplPackage" value="${output.serviceImplPackage}"/>
+            <property name="controllerPackage" value="${output.controllerPackage}"/>
+            <property name="controllerTargetProject" value="${output.controllerProject}"/>
+            <!--UserService,该值则为Service-->
+            <property name="serviceSuffix" value="Service"/>
+            <!--Service接口的父接口-->
+            <property name="superServiceInterface" value="com.xiaozhu.core.service.BaseService"/>
+            <!--ServiceImpl的父类-->
+            <property name="superServiceImpl" value="com.xiaozhu.core.service.impl.BaseServiceImpl"/>
+            <!--controller的父类接口-->
+            <property name="superController" value="com.xiaozhu.core.controller.BaseController"/>
+        </plugin>
+        <commentGenerator type="com.xiaozhu.mbg.CommentGenerator">
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <property name="suppressAllComments" value="true"/>
+            <property name="suppressDate" value="true"/>
+            <property name="addRemarkComments" value="true"/>
+        </commentGenerator>
+
+        <jdbcConnection driverClass="${jdbc.driverClass}"
+                        connectionURL="${jdbc.connectionURL}"
+                        userId="${jdbc.userId}"
+                        password="${jdbc.password}">
+            <!--解决mysql驱动升级到8.0后不生成指定数据库代码的问题-->
+            <property name="nullCatalogMeansCurrent" value="true" />
+        </jdbcConnection>
+
+        <!--指定生成model的路径-->
+        <javaModelGenerator targetPackage="${output.entity}"
+                            targetProject="${output.project}"/>
+        <!--指定生成mapper.xml的路径-->
+        <sqlMapGenerator targetPackage="resources.${output.mapper}"
+                         targetProject="${output.project}"/>
+        <!--指定生成mapper接口的的路径-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="${output.mapper}" targetProject="${output.project}"/>
+
+        <table tableName="jx3_ocpt_info"></table>
+        <table tableName="jx3_body_shape_info"></table>
+        <table tableName="jx3_camp_info"></table>
+        <table tableName="jx3_server_info"></table>
+    </context>
+</generatorConfiguration>

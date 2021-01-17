@@ -1,30 +1,16 @@
 package com.xiaozhu.zzpes.mapper;
 
+import com.xiaozhu.core.dao.BaseMapper;;
 import com.xiaozhu.zzpes.entity.Jx3OcptInfo;
 import com.xiaozhu.zzpes.entity.Jx3OcptInfoExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
 
-public interface Jx3OcptInfoMapper {
-    long countByExample(Jx3OcptInfoExample example);
-
-    int deleteByExample(Jx3OcptInfoExample example);
-
-    int deleteByPrimaryKey(Integer ocptId);
-
-    int insert(Jx3OcptInfo record);
-
-    int insertSelective(Jx3OcptInfo record);
-
-    List<Jx3OcptInfo> selectByExample(Jx3OcptInfoExample example);
-
-    Jx3OcptInfo selectByPrimaryKey(Integer ocptId);
-
-    int updateByExampleSelective(@Param("record") Jx3OcptInfo record, @Param("example") Jx3OcptInfoExample example);
-
-    int updateByExample(@Param("record") Jx3OcptInfo record, @Param("example") Jx3OcptInfoExample example);
-
-    int updateByPrimaryKeySelective(Jx3OcptInfo record);
-
-    int updateByPrimaryKey(Jx3OcptInfo record);
+/**
+ * @description 剑三角色职业信息表 Mapper
+ * @version 1.0.0
+ * @tableName jx3_ocpt_info
+ * @author xiaozhu
+ * @date 2021-01-17 12:00:06
+ * @copyright 2021 xiaozhu
+ */
+public interface Jx3OcptInfoMapper extends BaseMapper<Jx3OcptInfo> {
 }

@@ -1,10 +1,25 @@
 package com.xiaozhu.zzpes.entity;
 
 import io.swagger.annotations.ApiModelProperty;
-import java.io.Serializable;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import lombok.Data;
 
-public class Jx3OcptInfo implements Serializable {
+/**
+ * @description jx3_ocpt_info 实体对象
+ * @version 1.0.0
+ * @tableName jx3_ocpt_info
+ * @author xiaozhu
+ * @date 2021-01-17 12:00:06
+ * @copyright 2021 xiaozhu
+ */
+@Data
+@Table(name = "jx3_ocpt_info")
+public class Jx3OcptInfo {
+    private static final long serialVersionUID = 1L;
+
     @ApiModelProperty(value = "剑三职业ID")
+    @Id
     private Integer ocptId;
 
     @ApiModelProperty(value = "剑三职业名字")
@@ -12,44 +27,4 @@ public class Jx3OcptInfo implements Serializable {
 
     @ApiModelProperty(value = "剑三职业CODE")
     private String ocptCode;
-
-    private static final long serialVersionUID = 1L;
-
-    public Integer getOcptId() {
-        return ocptId;
-    }
-
-    public void setOcptId(Integer ocptId) {
-        this.ocptId = ocptId;
-    }
-
-    public String getOcptName() {
-        return ocptName;
-    }
-
-    public void setOcptName(String ocptName) {
-        this.ocptName = ocptName;
-    }
-
-    public String getOcptCode() {
-        return ocptCode;
-    }
-
-    public void setOcptCode(String ocptCode) {
-        this.ocptCode = ocptCode;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", ocptId=").append(ocptId);
-        sb.append(", ocptName=").append(ocptName);
-        sb.append(", ocptCode=").append(ocptCode);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
-        sb.append("]");
-        return sb.toString();
-    }
 }

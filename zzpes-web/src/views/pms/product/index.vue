@@ -1,45 +1,33 @@
-<template> 
+<template>
   <div class="app-container">
     <el-card class="filter-container" shadow="never">
       <div>
         <!--      <i class="el-icon-search"></i>-->
-        <span>药方信息</span>
+        <span>角色信息</span>
       </div>
       <div style="margin-top: 15px">
         <el-form :inline="true" :model="listQuery" size="small" label-width="140px">
-          <el-form-item label="姓名：" style="width: 25%">
-            <el-input style="width: 200px" v-model="listQuery.patientName" placeholder="姓名"></el-input>
-          </el-form-item>
-          <el-form-item label="性别：" style="width: 25%">
-            <el-select v-model="listQuery.sex" placeholder="选择性别" clearable style="width: 200px">
+          <el-form-item label="职业：" style="width: 25%">
+            <el-select v-model="listQuery.ocptId" placeholder="选择性别" clearable style="width: 200px">
               <el-option
-                v-for="item in sexualityOptions"
-                :key="item.value"
-                :label="item.label"
-                :value="item.value">
+                v-for="item in ocptOptions"
+                :key="item.ocptId"
+                :label="item.ocptName"
+                :value="item.ocptId">
               </el-option>
             </el-select>
           </el-form-item>
-          <el-form-item label="日期：" style="width: 25%">
-            <el-date-picker
-              class="input-width"
-              v-model="listQuery.inputDate"
-              value-format="yyyy-MM-dd"
-              type="date"
-              placeholder="请选择时间">
-            </el-date-picker>
-          </el-form-item>
-          <el-form-item style="width: 20%">
-          </el-form-item>
-          <el-form-item label="症状：">
-            <el-select v-model="listQuery.symptom" placeholder="" @change="addItemToList(listQuery.symptom, symptomList, selectEdSymptomList)" clearable >
-              <el-option
-                v-for="item in symptomList"
-                :key="item.value"
-                :label="item.label"
-                :value="item.value">
-              </el-option>
-            </el-select>
+          <el-form-item style="width: 50%">
+            <el-form-item label="体型：" >
+              <el-select v-model="listQuery.ocptId" placeholder="选择性别" clearable style="width: 200px">
+                <el-option
+                  v-for="item in ocptOptions"
+                  :key="item.ocptId"
+                  :label="item.ocptName"
+                  :value="item.ocptId">
+                </el-option>
+              </el-select>
+            </el-form-item>
           </el-form-item>
         </el-form>
       </div>
@@ -164,7 +152,7 @@
   import {fetchList as fetchSkuStockList,update as updateSkuStockList} from '@/api/skuStock'
   import {fetchList as fetchProductAttrList} from '@/api/productAttr'
   import {fetchList as fetchBrandList} from '@/api/brand'
-  import {fetchListWithChildren} from '@/api/productCate'
+  import {fetchOcptList} from '@/api/common/ocpt'
 
   const defaultListQuery = {
     keyword: null,
@@ -271,14 +259,25 @@
         },{
           value:1,
           label: '女'
-        }]
+        }],
+        ocptOptions:[],
+        bodyShapeOptions:[],
+
+
+        prescriptionInfoList:[],
+        herbList:[],
+        unitList:[],
+        operationList:[],
+        operationUnitList:[]
+
       }
     },
     created() {
-      this.getList();
-      this.getBrandList();
-      this.getProductCateList();
-      this.getherbsList();
+      // this.getList();
+      // this.getBrandList();
+      // this.getProductCateList();
+      // this.getherbsList();
+      this.getOcptList();
     },
     watch: {
       selectProductCateValue: function (newValue) {
@@ -462,74 +461,12 @@
 
       },
 
-      getherbsList(){
-        this.herbList = [{
-          value:"herb1",
-          label:"生姜"
-        },{
-          value:"herb2",
-          label:"甘草"
-        },{
-          value:"herb3",
-          label:"大枣"
-        },{
-          value:"herb4",
-          label:"紫苏"
-        },{
-          value:"herb5",
-          label:"淡竹叶"
-        }];
-        this.unitList = [{
-          value:"0",
-          label:"克",
-          short:"g"
-        },{
-          value:"1",
-          label:"公斤",
-          short:"kg"
-        },{
-          value:"2",
-          label:"颗",
-          short:"个"
-        },{
-          value:"3",
-          label:"分钟",
-          short:"min"
-        }];
-
-
-        this.operationList = [{
-          value:"0",
-          label:"醋炒"
-        },{
-          value:"1",
-          label:"火煨"
-        },{
-          value:"2",
-          label:"糖炒"
-        }];
-
-
-        this.operationUnitList = [{
-          value:"0",
-          label:"克",
-          short:"g"
-        },{
-          value:"1",
-          label:"公斤",
-          short:"kg"
-        },{
-          value:"2",
-          label:"颗",
-          short:"个"
-        },{
-          value:"3",
-          label:"分钟",
-          short:"min"
-        }]
-
-        this.prescriptionInfoList = [];
+      getOcptList(){
+        fetchOcptList().then(response => {
+          this.ocptOptions = response.data.list;
+        });
       },
+
 
       handleShowSkuEditDialog(index,row){
         this.editSkuInfo.dialogVisible=true;
