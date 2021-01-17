@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaozhu.zzpes.mapper.Jx3RoleInfoOverallMapper">
+  <resultMap id="BaseResultMap" type="com.xiaozhu.zzpes.entity.Jx3RoleInfoOverall">
+    <id column="JX3R_ID" jdbcType="VARCHAR" property="jx3rId" />
+    <result column="OCPT_ID" jdbcType="INTEGER" property="ocptId" />
+    <result column="BODY_SHAPE_ID" jdbcType="INTEGER" property="bodyShapeId" />
+    <result column="PRICE" jdbcType="REAL" property="price" />
+    <result column="FOLLOW_NUM" jdbcType="INTEGER" property="followNum" />
+    <result column="EXP_POINT" jdbcType="INTEGER" property="expPoint" />
+    <result column="EQUIP_POINT" jdbcType="INTEGER" property="equipPoint" />
+    <result column="CAMP_TYPE_ID" jdbcType="INTEGER" property="campTypeId" />
+    <result column="SERVER_ID" jdbcType="VARCHAR" property="serverId" />
+    <result column="STATE" jdbcType="CHAR" property="state" />
+    <result column="DTL_INFO_UPDATE_TIME" jdbcType="TIMESTAMP" property="dtlInfoUpdateTime" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="REMAINING_TIME" jdbcType="INTEGER" property="remainingTime" />
+    <result column="END_TIME" jdbcType="TIMESTAMP" property="endTime" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.xiaozhu.zzpes.entity.Jx3RoleInfoOverall">
+    <result column="DTL_INFO_CONTENT" jdbcType="LONGVARBINARY" property="dtlInfoContent" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    JX3R_ID, OCPT_ID, BODY_SHAPE_ID, PRICE, FOLLOW_NUM, EXP_POINT, EQUIP_POINT, CAMP_TYPE_ID, 
+    SERVER_ID, STATE, DTL_INFO_UPDATE_TIME, CREATE_TIME, UPDATE_TIME, REMAINING_TIME, 
+    END_TIME
+  </sql>
+  <sql id="Blob_Column_List">
+    DTL_INFO_CONTENT
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.xiaozhu.zzpes.entity.Jx3RoleInfoOverallExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from jx3_role_info_overall
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.xiaozhu.zzpes.entity.Jx3RoleInfoOverallExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from jx3_role_info_overall
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from jx3_role_info_overall
+    where JX3R_ID = #{jx3rId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from jx3_role_info_overall
+    where JX3R_ID = #{jx3rId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xiaozhu.zzpes.entity.Jx3RoleInfoOverallExample">
+    delete from jx3_role_info_overall
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xiaozhu.zzpes.entity.Jx3RoleInfoOverall">
+    insert into jx3_role_info_overall (JX3R_ID, OCPT_ID, BODY_SHAPE_ID, 
+      PRICE, FOLLOW_NUM, EXP_POINT, 
+      EQUIP_POINT, CAMP_TYPE_ID, SERVER_ID, 
+      STATE, DTL_INFO_UPDATE_TIME, CREATE_TIME, 
+      UPDATE_TIME, REMAINING_TIME, END_TIME, 
+      DTL_INFO_CONTENT)
+    values (#{jx3rId,jdbcType=VARCHAR}, #{ocptId,jdbcType=INTEGER}, #{bodyShapeId,jdbcType=INTEGER}, 
+      #{price,jdbcType=REAL}, #{followNum,jdbcType=INTEGER}, #{expPoint,jdbcType=INTEGER}, 
+      #{equipPoint,jdbcType=INTEGER}, #{campTypeId,jdbcType=INTEGER}, #{serverId,jdbcType=VARCHAR}, 
+      #{state,jdbcType=CHAR}, #{dtlInfoUpdateTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{remainingTime,jdbcType=INTEGER}, #{endTime,jdbcType=TIMESTAMP}, 
+      #{dtlInfoContent,jdbcType=LONGVARBINARY})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaozhu.zzpes.entity.Jx3RoleInfoOverall">
+    insert into jx3_role_info_overall
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="jx3rId != null">
+        JX3R_ID,
+      </if>
+      <if test="ocptId != null">
+        OCPT_ID,
+      </if>
+      <if test="bodyShapeId != null">
+        BODY_SHAPE_ID,
+      </if>
+      <if test="price != null">
+        PRICE,
+      </if>
+      <if test="followNum != null">
+        FOLLOW_NUM,
+      </if>
+      <if test="expPoint != null">
+        EXP_POINT,
+      </if>
+      <if test="equipPoint != null">
+        EQUIP_POINT,
+      </if>
+      <if test="campTypeId != null">
+        CAMP_TYPE_ID,
+      </if>
+      <if test="serverId != null">
+        SERVER_ID,
+      </if>
+      <if test="state != null">
+        STATE,
+      </if>
+      <if test="dtlInfoUpdateTime != null">
+        DTL_INFO_UPDATE_TIME,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME,
+      </if>
+      <if test="remainingTime != null">
+        REMAINING_TIME,
+      </if>
+      <if test="endTime != null">
+        END_TIME,
+      </if>
+      <if test="dtlInfoContent != null">
+        DTL_INFO_CONTENT,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="jx3rId != null">
+        #{jx3rId,jdbcType=VARCHAR},
+      </if>
+      <if test="ocptId != null">
+        #{ocptId,jdbcType=INTEGER},
+      </if>
+      <if test="bodyShapeId != null">
+        #{bodyShapeId,jdbcType=INTEGER},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=REAL},
+      </if>
+      <if test="followNum != null">
+        #{followNum,jdbcType=INTEGER},
+      </if>
+      <if test="expPoint != null">
+        #{expPoint,jdbcType=INTEGER},
+      </if>
+      <if test="equipPoint != null">
+        #{equipPoint,jdbcType=INTEGER},
+      </if>
+      <if test="campTypeId != null">
+        #{campTypeId,jdbcType=INTEGER},
+      </if>
+      <if test="serverId != null">
+        #{serverId,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=CHAR},
+      </if>
+      <if test="dtlInfoUpdateTime != null">
+        #{dtlInfoUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remainingTime != null">
+        #{remainingTime,jdbcType=INTEGER},
+      </if>
+      <if test="endTime != null">
+        #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dtlInfoContent != null">
+        #{dtlInfoContent,jdbcType=LONGVARBINARY},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xiaozhu.zzpes.entity.Jx3RoleInfoOverallExample" resultType="java.lang.Long">
+    select count(*) from jx3_role_info_overall
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update jx3_role_info_overall
+    <set>
+      <if test="record.jx3rId != null">
+        JX3R_ID = #{record.jx3rId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ocptId != null">
+        OCPT_ID = #{record.ocptId,jdbcType=INTEGER},
+      </if>
+      <if test="record.bodyShapeId != null">
+        BODY_SHAPE_ID = #{record.bodyShapeId,jdbcType=INTEGER},
+      </if>
+      <if test="record.price != null">
+        PRICE = #{record.price,jdbcType=REAL},
+      </if>
+      <if test="record.followNum != null">
+        FOLLOW_NUM = #{record.followNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.expPoint != null">
+        EXP_POINT = #{record.expPoint,jdbcType=INTEGER},
+      </if>
+      <if test="record.equipPoint != null">
+        EQUIP_POINT = #{record.equipPoint,jdbcType=INTEGER},
+      </if>
+      <if test="record.campTypeId != null">
+        CAMP_TYPE_ID = #{record.campTypeId,jdbcType=INTEGER},
+      </if>
+      <if test="record.serverId != null">
+        SERVER_ID = #{record.serverId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.state != null">
+        STATE = #{record.state,jdbcType=CHAR},
+      </if>
+      <if test="record.dtlInfoUpdateTime != null">
+        DTL_INFO_UPDATE_TIME = #{record.dtlInfoUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.createTime != null">
+        CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updateTime != null">
+        UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.remainingTime != null">
+        REMAINING_TIME = #{record.remainingTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.endTime != null">
+        END_TIME = #{record.endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.dtlInfoContent != null">
+        DTL_INFO_CONTENT = #{record.dtlInfoContent,jdbcType=LONGVARBINARY},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update jx3_role_info_overall
+    set JX3R_ID = #{record.jx3rId,jdbcType=VARCHAR},
+      OCPT_ID = #{record.ocptId,jdbcType=INTEGER},
+      BODY_SHAPE_ID = #{record.bodyShapeId,jdbcType=INTEGER},
+      PRICE = #{record.price,jdbcType=REAL},
+      FOLLOW_NUM = #{record.followNum,jdbcType=INTEGER},
+      EXP_POINT = #{record.expPoint,jdbcType=INTEGER},
+      EQUIP_POINT = #{record.equipPoint,jdbcType=INTEGER},
+      CAMP_TYPE_ID = #{record.campTypeId,jdbcType=INTEGER},
+      SERVER_ID = #{record.serverId,jdbcType=VARCHAR},
+      STATE = #{record.state,jdbcType=CHAR},
+      DTL_INFO_UPDATE_TIME = #{record.dtlInfoUpdateTime,jdbcType=TIMESTAMP},
+      CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
+      REMAINING_TIME = #{record.remainingTime,jdbcType=INTEGER},
+      END_TIME = #{record.endTime,jdbcType=TIMESTAMP},
+      DTL_INFO_CONTENT = #{record.dtlInfoContent,jdbcType=LONGVARBINARY}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update jx3_role_info_overall
+    set JX3R_ID = #{record.jx3rId,jdbcType=VARCHAR},
+      OCPT_ID = #{record.ocptId,jdbcType=INTEGER},
+      BODY_SHAPE_ID = #{record.bodyShapeId,jdbcType=INTEGER},
+      PRICE = #{record.price,jdbcType=REAL},
+      FOLLOW_NUM = #{record.followNum,jdbcType=INTEGER},
+      EXP_POINT = #{record.expPoint,jdbcType=INTEGER},
+      EQUIP_POINT = #{record.equipPoint,jdbcType=INTEGER},
+      CAMP_TYPE_ID = #{record.campTypeId,jdbcType=INTEGER},
+      SERVER_ID = #{record.serverId,jdbcType=VARCHAR},
+      STATE = #{record.state,jdbcType=CHAR},
+      DTL_INFO_UPDATE_TIME = #{record.dtlInfoUpdateTime,jdbcType=TIMESTAMP},
+      CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
+      REMAINING_TIME = #{record.remainingTime,jdbcType=INTEGER},
+      END_TIME = #{record.endTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaozhu.zzpes.entity.Jx3RoleInfoOverall">
+    update jx3_role_info_overall
+    <set>
+      <if test="ocptId != null">
+        OCPT_ID = #{ocptId,jdbcType=INTEGER},
+      </if>
+      <if test="bodyShapeId != null">
+        BODY_SHAPE_ID = #{bodyShapeId,jdbcType=INTEGER},
+      </if>
+      <if test="price != null">
+        PRICE = #{price,jdbcType=REAL},
+      </if>
+      <if test="followNum != null">
+        FOLLOW_NUM = #{followNum,jdbcType=INTEGER},
+      </if>
+      <if test="expPoint != null">
+        EXP_POINT = #{expPoint,jdbcType=INTEGER},
+      </if>
+      <if test="equipPoint != null">
+        EQUIP_POINT = #{equipPoint,jdbcType=INTEGER},
+      </if>
+      <if test="campTypeId != null">
+        CAMP_TYPE_ID = #{campTypeId,jdbcType=INTEGER},
+      </if>
+      <if test="serverId != null">
+        SERVER_ID = #{serverId,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        STATE = #{state,jdbcType=CHAR},
+      </if>
+      <if test="dtlInfoUpdateTime != null">
+        DTL_INFO_UPDATE_TIME = #{dtlInfoUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remainingTime != null">
+        REMAINING_TIME = #{remainingTime,jdbcType=INTEGER},
+      </if>
+      <if test="endTime != null">
+        END_TIME = #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dtlInfoContent != null">
+        DTL_INFO_CONTENT = #{dtlInfoContent,jdbcType=LONGVARBINARY},
+      </if>
+    </set>
+    where JX3R_ID = #{jx3rId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.xiaozhu.zzpes.entity.Jx3RoleInfoOverall">
+    update jx3_role_info_overall
+    set OCPT_ID = #{ocptId,jdbcType=INTEGER},
+      BODY_SHAPE_ID = #{bodyShapeId,jdbcType=INTEGER},
+      PRICE = #{price,jdbcType=REAL},
+      FOLLOW_NUM = #{followNum,jdbcType=INTEGER},
+      EXP_POINT = #{expPoint,jdbcType=INTEGER},
+      EQUIP_POINT = #{equipPoint,jdbcType=INTEGER},
+      CAMP_TYPE_ID = #{campTypeId,jdbcType=INTEGER},
+      SERVER_ID = #{serverId,jdbcType=VARCHAR},
+      STATE = #{state,jdbcType=CHAR},
+      DTL_INFO_UPDATE_TIME = #{dtlInfoUpdateTime,jdbcType=TIMESTAMP},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      REMAINING_TIME = #{remainingTime,jdbcType=INTEGER},
+      END_TIME = #{endTime,jdbcType=TIMESTAMP},
+      DTL_INFO_CONTENT = #{dtlInfoContent,jdbcType=LONGVARBINARY}
+    where JX3R_ID = #{jx3rId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaozhu.zzpes.entity.Jx3RoleInfoOverall">
+    update jx3_role_info_overall
+    set OCPT_ID = #{ocptId,jdbcType=INTEGER},
+      BODY_SHAPE_ID = #{bodyShapeId,jdbcType=INTEGER},
+      PRICE = #{price,jdbcType=REAL},
+      FOLLOW_NUM = #{followNum,jdbcType=INTEGER},
+      EXP_POINT = #{expPoint,jdbcType=INTEGER},
+      EQUIP_POINT = #{equipPoint,jdbcType=INTEGER},
+      CAMP_TYPE_ID = #{campTypeId,jdbcType=INTEGER},
+      SERVER_ID = #{serverId,jdbcType=VARCHAR},
+      STATE = #{state,jdbcType=CHAR},
+      DTL_INFO_UPDATE_TIME = #{dtlInfoUpdateTime,jdbcType=TIMESTAMP},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      REMAINING_TIME = #{remainingTime,jdbcType=INTEGER},
+      END_TIME = #{endTime,jdbcType=TIMESTAMP}
+    where JX3R_ID = #{jx3rId,jdbcType=VARCHAR}
+  </update>
+</mapper>
