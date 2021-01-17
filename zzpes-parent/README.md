@@ -3,6 +3,8 @@
 
 # mall
 
+[代码生成器使用](https://segmentfault.com/a/1190000021832619)
+
 <p>
   <a href="#公众号"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/%E5%85%AC%E4%BC%97%E5%8F%B7-macrozheng-blue.svg" alt="公众号"></a>
   <a href="https://github.com/macrozheng/mall-learning"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B-mall--learning-green.svg" alt="学习教程"></a>
@@ -49,7 +51,7 @@
 ``` lua
 mall
 ├── mall-common -- 工具类及通用代码
-├── mall-mbg -- MyBatisGenerator生成的数据库操作代码
+├── zzpes-dal -- MyBatisGenerator生成的数据库操作代码
 ├── mall-security -- SpringSecurity封装公用模块
 ├── mall-admin -- 后台商城管理系统接口
 ├── mall-search -- 基于Elasticsearch的商品搜索系统
@@ -196,3 +198,8 @@ mall项目全套学习教程连载中，关注公众号「**macrozheng**」第�
 [Apache License 2.0](https://github.com/macrozheng/mall/blob/master/LICENSE)
 
 Copyright (c) 2018-2020 macrozheng
+
+
+
+### tkmybatis基础类
+[对照这个进行增减](https://www.cnblogs.com/xiaogblog/p/11730554.html)
