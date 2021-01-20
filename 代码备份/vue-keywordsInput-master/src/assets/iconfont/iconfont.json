@@ -1,0 +1,30 @@
+{
+  "id": "1456567",
+  "name": "QHVUE",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1722992",
+      "name": "关闭",
+      "font_class": "guanbi",
+      "unicode": "e7be",
+      "unicode_decimal": 59326
+    },
+    {
+      "icon_id": "4933340",
+      "name": "关闭",
+      "font_class": "guanbi2",
+      "unicode": "e735",
+      "unicode_decimal": 59189
+    },
+    {
+      "icon_id": "7036706",
+      "name": "上移",
+      "font_class": "shangyi",
+      "unicode": "e636",
+      "unicode_decimal": 58934
+    }
+  ]
+}
