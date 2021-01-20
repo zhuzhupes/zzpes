@@ -56,6 +56,7 @@ public class DynamicSecurityFilter extends AbstractSecurityInterceptor implement
         try {
             fi.getChain().doFilter(fi.getRequest(), fi.getResponse());
         } finally {
+            logger.debug(String.format("响应报文是: {}", fi.getResponse().toString()));
             super.afterInvocation(token, null);
         }
     }

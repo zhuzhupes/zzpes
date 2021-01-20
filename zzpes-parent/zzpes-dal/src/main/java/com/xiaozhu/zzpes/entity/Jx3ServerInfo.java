@@ -10,7 +10,7 @@ import lombok.Data;
  * @version 1.0.0
  * @tableName jx3_server_info
  * @author xiaozhu
- * @date 2021-01-17 12:10:58
+ * @date 2021-01-17 19:37:57
  * @copyright 2021 xiaozhu
  */
 @Data
@@ -27,4 +27,17 @@ public class Jx3ServerInfo {
 
     @ApiModelProperty(value = "服务器别称")
     private String serverAlias;
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", serverId=").append(serverId);
+        sb.append(", serverName=").append(serverName);
+        sb.append(", serverAlias=").append(serverAlias);
+        sb.append("]");
+        return sb.toString();
+    }
 }

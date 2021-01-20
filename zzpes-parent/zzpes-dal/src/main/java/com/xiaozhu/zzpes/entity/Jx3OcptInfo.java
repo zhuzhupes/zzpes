@@ -10,7 +10,7 @@ import lombok.Data;
  * @version 1.0.0
  * @tableName jx3_ocpt_info
  * @author xiaozhu
- * @date 2021-01-17 12:10:58
+ * @date 2021-01-17 19:37:57
  * @copyright 2021 xiaozhu
  */
 @Data
@@ -27,4 +27,17 @@ public class Jx3OcptInfo {
 
     @ApiModelProperty(value = "剑三职业CODE")
     private String ocptCode;
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", ocptId=").append(ocptId);
+        sb.append(", ocptName=").append(ocptName);
+        sb.append(", ocptCode=").append(ocptCode);
+        sb.append("]");
+        return sb.toString();
+    }
 }

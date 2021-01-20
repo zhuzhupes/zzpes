@@ -47,9 +47,9 @@
         <el-form :inline="true" :model="listQuery" size="small" label-width="140px" style="margin-top: 15px">
           <el-form-item label="已选症状：">
           </el-form-item>
-          <el-form-item  v-for="item in selectEdSymptomList">
-            <span class="el-input__inner" @click="removeItemInList(item.value, selectEdSymptomList)">{{item.label}}</span>
-          </el-form-item>
+<!--          <el-form-item  v-for="item in selectEdSymptomList">-->
+<!--            <span class="el-input__inner" @click="removeItemInList(item.value, selectEdSymptomList)">{{item.label}}</span>-->
+<!--          </el-form-item>-->
         </el-form>
       </div>
       <div style="margin-top: 15px">
@@ -108,9 +108,9 @@
         <el-form :inline="true" :model="listQuery" size="small" label-width="140px" style="margin-top: 15px" ref="prescriptionForm">
           <el-form-item label="已选药材：">
           </el-form-item>
-          <el-form-item  v-for="item in prescriptionInfoList">
-            <span class="el-input__inner" @click="removeItemInList(item.value, prescriptionInfoList)">{{item.label}}</span>
-          </el-form-item>
+<!--          <el-form-item  v-for="item in prescriptionInfoList">-->
+<!--            <span class="el-input__inner" @click="removeItemInList(item.value, prescriptionInfoList)">{{item.label}}</span>-->
+<!--          </el-form-item>-->
         </el-form>
       </div>
 

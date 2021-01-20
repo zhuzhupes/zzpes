@@ -10,7 +10,7 @@ import lombok.Data;
  * @version 1.0.0
  * @tableName jx3_body_shape_info
  * @author xiaozhu
- * @date 2021-01-17 12:10:58
+ * @date 2021-01-17 19:37:57
  * @copyright 2021 xiaozhu
  */
 @Data
@@ -24,4 +24,16 @@ public class Jx3BodyShapeInfo {
 
     @ApiModelProperty(value = "体型名称")
     private String bodyShapeName;
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", bodyShapeId=").append(bodyShapeId);
+        sb.append(", bodyShapeName=").append(bodyShapeName);
+        sb.append("]");
+        return sb.toString();
+    }
 }

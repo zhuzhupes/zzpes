@@ -9,7 +9,19 @@ export function fetchList(url) {
   url = url+'/allList';
   return request({
     url: url,
-    method:'get',
-    params:{"hahah":"kjskd"}
+    method:'get'
   });
+}
+
+
+export function checkIsIn(option, list, key){
+  if(key == null || key == ''){
+    return list.findIndex((item, i)=>{
+      return item === option
+    });
+  }else{
+    return list.findIndex((item, i)=>{
+      return item[key] === option[key]
+    });
+  }
 }

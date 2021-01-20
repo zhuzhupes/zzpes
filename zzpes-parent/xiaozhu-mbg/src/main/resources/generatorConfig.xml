@@ -12,7 +12,7 @@
         <!-- 为模型生成序列化方法-->
 <!--        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>-->
         <!-- 为生成的Java模型创建一个toString方法 -->
-<!--        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>-->
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
         <!--生成mapper.xml时覆盖原文件-->
         <plugin type="org.mybatis.generator.plugins.UnmergeableXmlMappersPlugin" />
         <plugin type="com.xiaozhu.mbg.MyLombokPlugin">
@@ -56,13 +56,14 @@
                             targetProject="${output.project}"/>
         <!--指定生成mapper.xml的路径-->
         <sqlMapGenerator targetPackage="resources.${output.mapper}"
-                         targetProject="${output.project}"/>
+                         targetProject="${output.xmlpath}"/>
         <!--指定生成mapper接口的的路径-->
         <javaClientGenerator type="XMLMAPPER" targetPackage="${output.mapper}" targetProject="${output.project}"/>
 
-        <table tableName="jx3_ocpt_info"></table>
-        <table tableName="jx3_body_shape_info"></table>
-        <table tableName="jx3_camp_info"></table>
-        <table tableName="jx3_server_info"></table>
+<!--        <table tableName="jx3_ocpt_info"></table>-->
+<!--        <table tableName="jx3_body_shape_info"></table>-->
+<!--        <table tableName="jx3_camp_info"></table>-->
+<!--        <table tableName="jx3_server_info"></table>-->
+        <table tableName="jx3_dtl_info"></table>
     </context>
 </generatorConfiguration>

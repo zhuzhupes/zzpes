@@ -1,10 +1,25 @@
 package com.xiaozhu.zzpes.entity;
 
 import io.swagger.annotations.ApiModelProperty;
-import java.io.Serializable;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import lombok.Data;
 
-public class Jx3DtlInfo implements Serializable {
+/**
+ * @description jx3_dtl_info 实体对象
+ * @version 1.0.0
+ * @tableName jx3_dtl_info
+ * @author xiaozhu
+ * @date 2021-01-18 14:00:03
+ * @copyright 2021 xiaozhu
+ */
+@Data
+@Table(name = "jx3_dtl_info")
+public class Jx3DtlInfo {
+    private static final long serialVersionUID = 1L;
+
     @ApiModelProperty(value = "详情日志ID")
+    @Id
     private Integer dtlId;
 
     @ApiModelProperty(value = "详情类别")
@@ -25,64 +40,6 @@ public class Jx3DtlInfo implements Serializable {
     @ApiModelProperty(value = "详情中文名称")
     private String dtlZhcnName;
 
-    private static final long serialVersionUID = 1L;
-
-    public Integer getDtlId() {
-        return dtlId;
-    }
-
-    public void setDtlId(Integer dtlId) {
-        this.dtlId = dtlId;
-    }
-
-    public String getDtlType() {
-        return dtlType;
-    }
-
-    public void setDtlType(String dtlType) {
-        this.dtlType = dtlType;
-    }
-
-    public String getDtlTypeDtl() {
-        return dtlTypeDtl;
-    }
-
-    public void setDtlTypeDtl(String dtlTypeDtl) {
-        this.dtlTypeDtl = dtlTypeDtl;
-    }
-
-    public Integer getDtlTypeId() {
-        return dtlTypeId;
-    }
-
-    public void setDtlTypeId(Integer dtlTypeId) {
-        this.dtlTypeId = dtlTypeId;
-    }
-
-    public String getDtlUrl() {
-        return dtlUrl;
-    }
-
-    public void setDtlUrl(String dtlUrl) {
-        this.dtlUrl = dtlUrl;
-    }
-
-    public String getDtlAliace() {
-        return dtlAliace;
-    }
-
-    public void setDtlAliace(String dtlAliace) {
-        this.dtlAliace = dtlAliace;
-    }
-
-    public String getDtlZhcnName() {
-        return dtlZhcnName;
-    }
-
-    public void setDtlZhcnName(String dtlZhcnName) {
-        this.dtlZhcnName = dtlZhcnName;
-    }
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -96,7 +53,6 @@ public class Jx3DtlInfo implements Serializable {
         sb.append(", dtlUrl=").append(dtlUrl);
         sb.append(", dtlAliace=").append(dtlAliace);
         sb.append(", dtlZhcnName=").append(dtlZhcnName);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();
     }
