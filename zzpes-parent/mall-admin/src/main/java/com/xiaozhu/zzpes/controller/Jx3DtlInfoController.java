@@ -32,7 +32,9 @@ public class Jx3DtlInfoController extends BaseController<Jx3DtlInfo> {
 //        criteria.andcon
         criteria.andLike("dtlZhcnName", "%"+String.format(qryParam.getValue())+"%");
         resList = service.page(0, 30).selectByExample(example);
-        resList = resList.subList(0, 100);
+        if(resList.size()>100){
+            resList = resList.subList(0, 100);
+        }
         return com.xiaozhu.http.api.CommonResult.success(CommonPage.restPage(resList));
     }
 }

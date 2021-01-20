@@ -4,7 +4,7 @@
       <qhtag v-for="(item, index) in value"
              size="small"
              :key="item[_key]"
-             :text="getText(item)"
+             :text="item.label"
              @click="close()"
              type @close="inputBox(item)">
       </qhtag>
@@ -14,6 +14,7 @@
              autocomplete="off"
              :placeholder="placeholder"
              v-model.trim="addTagInput"
+             @focus="focusInput()"
              :style="{width:width}"
              :maxlength="maxLen"/>
     </div>
@@ -22,13 +23,11 @@
         <li>
           <span>请选择...</span>
         </li>
-        <li v-for="option in dtlList" v-on:click="selected(option)"
+        <li v-for="option in dataList" v-on:click="selected(option)"
             :style="getStyle(option)">
-          <span>{{ getText(option) }}</span>
+          <span v-html="option.label"></span>
         </li>
-
       </ul>
-      <!--        <span class="cw-input-select_arrow"></span>-->
     </div>
   </div>
 </template>
@@ -36,45 +35,26 @@
 
 import qhtag from '../qh-tag'
 import {checkIsIn} from '@/api/commonUtils'
-
 export default {
   name: 'keywordsinput',
   data() {
     return {
-      addTagInput: "",
+      addTagInput:'',
       dataList: []
     }
   },
   props: ["value",
     "maxLen",
-    "keyword",
-    "showVals",
     "placeholder",
     "_key",
-
     "width",
     "dtlList"
   ], //' maxLen最大输入字符数，keyWords代表数据必传'
-  watch: {
-    addTagInput:{
 
-    },
-    list: {
-      handler(val) {
-        this.$emit('change', val);
-      }
-    },
-    dtlList: function () {
-      this.dataList = this.dtlList;
-      this.$forceUpdate();
-      console.log(this.dataList);
-    }
-  },
   computed: {
     list() {
-      return this.value;
+      console.log("computed发生作用");
     },
-
   },
   mounted() {
     window.addEventListener("click", function (e){
@@ -90,37 +70,23 @@ export default {
     });
   },
   created() {
-    this.dataList = this.dtlList;
+    this.dataList = JSON.parse(JSON.stringify(this.dtlList));
   },
   methods: {
-    /**
-     * 获取option的显示text字段
-     * @param option
-     * @returns {*}
-     */
-    getText(option) {
-      let txt = '';
-      if (this.showVals != null) {
-        if (this.showVals instanceof Array) {
-          //显示字段s是数组
-          for (var key of this.showVals) {
-            if (option[key] !== null) {
-              if (txt === '') {
-                txt = option[key];
-              } else {
-                txt = txt + '/' + option[key];
-              }
-            }
-          }
-        } else if (this.showVals instanceof String) {
-          //显示字段s是字符串
-          txt = option[this.showVals]
+    //模糊匹配公方法
+    focusInput(){
+      var inputDivs = document.getElementsByClassName('div_keywords');
+      for(var thisdiv of inputDivs){
+        if(this._uid === thisdiv.__vue__._uid){
+          thisdiv.getElementsByClassName('cw-input-select_pop')[0].style.display = 'flex';
+        }else{
+          thisdiv.getElementsByClassName('cw-input-select_pop')[0].style.display = 'none';
         }
       }
-      return txt;
     },
+
     getStyle(option) {
-      if (checkIsIn(option, this.value, null) !== -1) {
+      if (checkIsIn(option, this.value, this._key) !== -1) {
         return {backgroundColor: '#D2EAFC'};
       } else {
         return {};
@@ -130,8 +96,8 @@ export default {
       return true;
     },
     selected(option) {
-      console.log("选中.....");
-      let index = checkIsIn(option, this.value, this.keyword);
+      // console.log("哈哈哈哈", pinyinMatch.match(option.label,"万花"));
+      let index = checkIsIn(option, this.value, this._key);
       if (index === -1) {
         this.value.push(option);
       } else {
@@ -139,11 +105,38 @@ export default {
       }
     },
     inputBox(en) {
-      this.list.forEach((e, i) => {
-        if (e === en) {
-          this.list.splice(i, 1);
+      this.value.forEach((e, i) => {
+        if (e[this._key] === en[this._key]) {
+          this.value.splice(i, 1);
         }
       });
+    }
+  },
+  watch: {
+    addTagInput: function () {
+      this.$emit('inputSearch', this.addTagInput);
+      this.focusInput();
+    },
+    dtlList: function () {
+      this.dataList = JSON.parse(JSON.stringify(this.dtlList));
+      if (this.addTagInput !== "") {
+        for (var item of this.dataList) {
+          let titleString = item.label;
+          if (this.addTagInput && this.addTagInput.length > 0) {
+            // 匹配关键字正则
+            let replaceReg = new RegExp(this.addTagInput, 'g');
+            // 高亮替换v-html值
+            let replaceString = '<span style="color: #b94a48">' + this.addTagInput + '</span>';
+            // 开始替换
+            titleString = titleString.replace(replaceReg, replaceString);
+          }
+          item.label = titleString;
+          console.log(titleString);
+        }
+      } else {
+        this.dataList = JSON.parse(JSON.stringify(this.dtlList))
+      }
+      this.$forceUpdate();
     }
   },
   components: {
@@ -153,6 +146,9 @@ export default {
 </script>
 
 <style scoped>
+.search-text{
+  color: #DD4A68;
+}
 .keywordsTag {
   border: 1px solid #dcdfe6;
   border-radius: 5px;

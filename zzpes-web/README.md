@@ -1,5 +1,8 @@
-# Chinese Traditional Medicine Prescription Anylysis System-Web
-中医药分析系统-前端
+## 输入框模糊查询
+[pinyin输入框查询](https://blog.csdn.net/weixin_42155768/article/details/111280534)
+
+[上面导入的jar包](https://github.com/xmflswood/pinyin-match)
+
 
 # mall-admin-web
 <p>

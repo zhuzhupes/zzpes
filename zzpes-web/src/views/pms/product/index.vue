@@ -13,9 +13,8 @@
           <el-form-item style="width: 800px">
             <keywordsinput  @change="setKeywords" v-model="dtlList"
                             placeholder="有本事就点"
-                            keyword="dtlId"
-                            _key="dtlInfo"
-                            :showVals="['dtlZhcnName', 'dtlAliace']"
+                            _key="dtlId"
+                            @inputSearch="qryDtl"
                             width="800px"
                             :dtlList="dtlOptions"></keywordsinput>
           </el-form-item>
@@ -29,9 +28,7 @@
           <el-form-item style="width: 800px">
             <keywordsinput  @change="setKeywords" v-model="ocptList"
                             placeholder="我不想点"
-                            keyword="ocptId"
                             :_key="'ocptId'"
-                            :showVals="['ocptName']"
                             width="800px"
                             :dtlList="ocptOptions"></keywordsinput>
           </el-form-item>
@@ -144,6 +141,7 @@
   import {fetchServerList} from '@/api/common/server'
   import keywordsinput from '@/components/keywords-input'
   import {vagueDtlQry} from '@/api/common/dtlvagueqry'
+  import {addLabelToItem} from '@/api/commonUtils'
 
 
   const defaultListQuery = {
@@ -206,7 +204,7 @@
       this.getBodyShapeList();
       this.getServerList();
       this.getCampList();
-      this.qryDtl('role_appearance_info', 'hair', '发');
+      this.qryDtl('发');
     },
     watch: {
       selectProductCateValue: function (newValue) {
@@ -223,11 +221,14 @@
       }
     },
     methods: {
+      dtlInputText:function (newValue){
+        console.log("输入了...");
+      },
       setKeywords(v){
         // console.log(v)
       },
       dayinrizhi(){
-        console.log(this.dtlList);
+        // console.log(this.dtlList);
       },
       initFormat() {
         if (!Array.isArray(this.dataList3)) {
@@ -249,6 +250,7 @@
       getOcptList(){
         fetchOcptList().then(response => {
           this.ocptOptions = response.data.list;
+          this.ocptOptions = addLabelToItem(this.ocptOptions, ['ocptName'])
         });
       },
       getBodyShapeList(){
@@ -267,9 +269,10 @@
           this.campOptions = response.data.list;
         });
       },
-      qryDtl(dtlType, dtlTypeDtl, value){
-        vagueDtlQry(dtlType, dtlTypeDtl, value).then(response => {
+      qryDtl(value){
+        vagueDtlQry('role_appearance_info', 'hair', value).then(response => {
           this.dtlOptions = response.data.list;
+          this.dtlOptions = addLabelToItem(this.dtlOptions, ['dtlZhcnName', 'dtlZhcnName'])
         });
       },
 
