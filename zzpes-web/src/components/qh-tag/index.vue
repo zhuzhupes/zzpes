@@ -73,7 +73,6 @@ export default {
 
 }
 .qh-tag > span{
-    max-width: 80px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;

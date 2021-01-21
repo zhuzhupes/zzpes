@@ -36,6 +36,21 @@ export const constantRouterMap = [
 
 export const asyncRouterMap = [
   {
+    path: '/zzpes',
+    component: Layout,
+    redirect: '/zzpes/priceEstimate',
+    name: 'priceEstimate',
+    meta: {title: '估号', icon: 'product'},
+    children: [
+      {
+        path: 'priceEstimate',
+        name: 'priceEstimate',
+        component: () => import('@/views/zzpes/priceEstimate/index'),
+        meta: {title: '估号', icon: 'ums-resource'}
+      }
+    ]
+  },
+  {
     path: '/prescription',
     component: Layout,
     redirect: '/prescription/addPrescription',

@@ -51,12 +51,10 @@ export default {
     "dtlList"
   ], //' maxLen最大输入字符数，keyWords代表数据必传'
 
-  computed: {
-    list() {
-      console.log("computed发生作用");
-    },
-  },
   mounted() {
+    /**
+     * 为每个添加一个点击方法，如果点击到组件外部则所有隐藏
+     */
     window.addEventListener("click", function (e){
         //整个div
         var inputDivs = document.getElementsByClassName('div_keywords');
@@ -69,11 +67,12 @@ export default {
         }
     });
   },
-  created() {
-    this.dataList = JSON.parse(JSON.stringify(this.dtlList));
-  },
   methods: {
     //模糊匹配公方法
+    /**
+     *  检查到聚焦到了input框
+     *
+     */
     focusInput(){
       var inputDivs = document.getElementsByClassName('div_keywords');
       for(var thisdiv of inputDivs){
@@ -84,7 +83,9 @@ export default {
         }
       }
     },
-
+    /**
+     *  检查style，如果在显示标签list中则直接加深，否则初始的
+     **/
     getStyle(option) {
       if (checkIsIn(option, this.value, this._key) !== -1) {
         return {backgroundColor: '#D2EAFC'};
@@ -92,18 +93,27 @@ export default {
         return {};
       }
     },
-    checkOption(option) {
-      return true;
-    },
+    /**
+     * 选中触发的方法：将item对应的list添加到显示list或者去除
+     * @param option
+     */
     selected(option) {
-      // console.log("哈哈哈哈", pinyinMatch.match(option.label,"万花"));
       let index = checkIsIn(option, this.value, this._key);
       if (index === -1) {
-        this.value.push(option);
+        for(var item of this.dtlList){
+          if(item[this._key] === option[this._key]){
+            this.value.push(JSON.parse(JSON.stringify(item)));
+            break;
+          }
+        }
       } else {
         this.value.splice(index, 1);
       }
     },
+    /**
+     * 点击显示的标签，将显示list中的item移除
+     * @param en 显示的标签
+     */
     inputBox(en) {
       this.value.forEach((e, i) => {
         if (e[this._key] === en[this._key]) {
@@ -113,10 +123,18 @@ export default {
     }
   },
   watch: {
+
+    /**
+     * 监控输入框变化，提交inputSearch方法，父组件中调用inputSearch方法来更新数据
+     */
     addTagInput: function () {
       this.$emit('inputSearch', this.addTagInput);
       this.focusInput();
     },
+
+    /**
+     * 监控dtlList数据，即下拉框数据list
+     */
     dtlList: function () {
       this.dataList = JSON.parse(JSON.stringify(this.dtlList));
       if (this.addTagInput !== "") {
@@ -126,7 +144,7 @@ export default {
             // 匹配关键字正则
             let replaceReg = new RegExp(this.addTagInput, 'g');
             // 高亮替换v-html值
-            let replaceString = '<span style="color: #b94a48">' + this.addTagInput + '</span>';
+            let replaceString = '<span style="color: #b94a48; font-weight: bold">' + this.addTagInput + '</span>';
             // 开始替换
             titleString = titleString.replace(replaceReg, replaceString);
           }
@@ -146,24 +164,10 @@ export default {
 </script>
 
 <style scoped>
-.search-text{
-  color: #DD4A68;
-}
-.keywordsTag {
-  border: 1px solid #dcdfe6;
-  border-radius: 5px;
-  padding: 3px;
-}
+
+
 .div_keywords{
 
-}
-.keywordsTag .el-input {
-  display: inline-block;
-  width: 80px;
-}
-
-.keywordsTag .el-input__inner {
-  border-color: #fff;
 }
 
 .input-new-tag {
@@ -189,7 +193,7 @@ export default {
   border: 1px solid #E4E7ED;
   border-radius: 9px;
   max-height: 220px;
-  width: 200px;
+  width: 300px;
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
   margin-top: 5px;
   padding: 5px;
@@ -228,7 +232,7 @@ export default {
   display: block;
   margin-bottom: 0;
   max-height: 200px;
-  width: 190px;
+  width: 290px;
   margin-top:5px;
   overflow-y: scroll; /* 超出滚动 */
 }
